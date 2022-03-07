@@ -1,2 +1,2 @@
-# ETCY-App
+# ECTY-App
 Desert fox project akhir
