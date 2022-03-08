@@ -11,11 +11,30 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      GroupMember.hasMany(models.GroupMessage, { foreignKey: "GroupMemberId" })
+      GroupMember.belongsTo(models.GroupChatId, { foreignKey: "GroupChatId" })
+      GroupMember.belongsTo(models.UserId, { foreignKey: "UserId" })
     }
   }
   GroupMember.init({
-    GroupChatId: DataTypes.INTEGER,
-    UserId: DataTypes.INTEGER
+    GroupChatId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Group Chat Id is Required"
+        }
+      }
+    },
+    UserId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "User Id is Required"
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'GroupMember',

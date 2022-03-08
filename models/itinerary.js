@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class itinerary extends Model {
+  class Itinerary extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,20 +11,68 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Itinerary.hasOne(models.GroupChat, { foreignKey: "ItineraryId" })
+      Itinerary.hasMany(models.ItineraryPlace, { foreignKey: "ItineraryId" })
+      Itinerary.hasMany(models.ItineraryTransportation, { foreignKey: "ItineraryId" })
+      Itinerary.belongsTo(models.UserId, { foreignKey: "UserId" })
     }
   }
-  itinerary.init({
-    title: DataTypes.STRING,
-    destination: DataTypes.STRING,
-    dateStart: DataTypes.STRING,
-    dateEnd: DataTypes.STRING,
+  Itinerary.init({
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Title is Required"
+        }
+      }
+    },
+    destination: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Destination is Required"
+        }
+      }
+    },
+    dateStart: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Date Start is Required"
+        }
+      }
+    },
+    dateEnd: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Date End is Required"
+        }
+      }
+    },
     rating: DataTypes.STRING,
     budget: DataTypes.INTEGER,
-    UserId: DataTypes.INTEGER,
-    status: DataTypes.STRING
+    UserId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "User Id is Required"
+        }
+      }
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'Active'
+    }
   }, {
     sequelize,
-    modelName: 'itinerary',
+    modelName: 'Itinerary',
   });
-  return itinerary;
+  return Itinerary;
 };

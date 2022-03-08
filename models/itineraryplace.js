@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class itineraryPlace extends Model {
+  class ItineraryPlace extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,20 +11,65 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      ItineraryPlace.belongsTo(models.Itinerary, { foreignKey: "ItineraryId" })
     }
   }
-  itineraryPlace.init({
-    name: DataTypes.STRING,
+  ItineraryPlace.init({
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Name is Required"
+        }
+      }
+    },
     description: DataTypes.TEXT,
-    estimatedPrice: DataTypes.INTEGER,
+    estimatedPrice: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Estimated Price is Required"
+        }
+      }
+    },
     rating: DataTypes.STRING,
-    itineraryOrder: DataTypes.INTEGER,
-    date: DataTypes.STRING,
-    ItineraryId: DataTypes.INTEGER,
-    status: DataTypes.STRING
+    itineraryOrder: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Itinerary Order is Required"
+        }
+      }
+    },
+    date: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Date is Required"
+        }
+      }
+    },
+    ItineraryId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Itinerary Id is Required"
+        }
+      }
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'Active'
+    }
   }, {
     sequelize,
-    modelName: 'itineraryPlace',
+    modelName: 'ItineraryPlace',
   });
-  return itineraryPlace;
+  return ItineraryPlace;
 };

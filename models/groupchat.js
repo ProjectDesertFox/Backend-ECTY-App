@@ -11,12 +11,33 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      GroupChat.belongsTo(models.Itinerary, { foreignKey: "ItineraryId" })
     }
   }
   GroupChat.init({
-    name: DataTypes.STRING,
-    status: DataTypes.STRING,
-    ItineraryId: DataTypes.INTEGER
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Name is Required"
+        }
+      }
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'Active'
+    },
+    ItineraryId: {
+      type: DataTypes.Integer,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Itinerary Id is Required"
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'GroupChat',

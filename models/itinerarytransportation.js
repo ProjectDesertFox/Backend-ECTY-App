@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class itineraryTransportation extends Model {
+  class ItineraryTransportation extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,19 +11,52 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      ItineraryTransportation.belongsTo(models.Itinerary, { foreignKey: "ItineraryId" })
     }
   }
-  itineraryTransportation.init({
-    transportationType: DataTypes.STRING,
-    from: DataTypes.STRING,
-    to: DataTypes.STRING,
+  ItineraryTransportation.init({
+    transportationType: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Transportation Type is Required"
+        }
+      }
+    },
+    from: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "From is Required"
+        }
+      }
+    },
+    to: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "To is Required"
+        }
+      }
+    },
     distance: DataTypes.STRING,
     estimatedTime: DataTypes.STRING,
     estimatedPrice: DataTypes.INTEGER,
-    ItineraryId: DataTypes.INTEGER
+    ItineraryId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Itinerary Id is Required"
+        }
+      }
+    }
   }, {
     sequelize,
-    modelName: 'itineraryTransportation',
+    modelName: 'ItineraryTransportation',
   });
-  return itineraryTransportation;
+  return ItineraryTransportation;
 };

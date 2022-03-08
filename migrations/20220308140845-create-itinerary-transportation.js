@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('itineraryTransportations', {
+    await queryInterface.createTable('ItineraryTransportations', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,16 +9,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       transportationType: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       from: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       to: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       distance: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       estimatedTime: {
         type: Sequelize.STRING
@@ -27,7 +30,14 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       ItineraryId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Itineraries',
+          key: 'id'
+        },
+        onUpdate: 'cascade',
+        onDelete: 'cascade'
       },
       createdAt: {
         allowNull: false,
@@ -40,6 +50,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('itineraryTransportations');
+    await queryInterface.dropTable('ItineraryTransportations');
   }
 };

@@ -12,7 +12,14 @@ module.exports = {
         type: Sequelize.STRING
       },
       GroupMemberId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'GroupMembers',
+          key: 'id'
+        },
+        onUpdate: 'cascade',
+        onDelete: 'cascade'
       },
       createdAt: {
         allowNull: false,

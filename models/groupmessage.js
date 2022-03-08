@@ -11,11 +11,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      GroupMessage.belongsTo(models.GroupMember, { foreignKey: "GroupMemberId" })
     }
   }
   GroupMessage.init({
     message: DataTypes.STRING,
-    GroupMemberId: DataTypes.INTEGER
+    GroupMemberId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Group Member Id is Required"
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'GroupMessage',
