@@ -13,7 +13,7 @@ const authentication = (req, res, next) => {
         User.findByPk(decoded.id)
             .then((user) => {
                 if (user) {
-                    req.id = user.id
+                    req.UserId = user.id
                     next()
                 } else {
                     next({ status: 404, message: "Broken Access Token" })

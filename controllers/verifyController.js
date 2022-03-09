@@ -40,6 +40,8 @@ module.exports = class verificationController {
                 let validEmail = true
                 let updateUser = await UserVerification.update({validEmail}, {where:{id:checkUser[0].dataValues.id}})
                 return res.status(201).json(updateUser)
+            } else {
+                return res.status(400).json({message:'Fail to check Email'})
             }
         } catch (error) {
             next(error)
