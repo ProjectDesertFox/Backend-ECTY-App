@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      UserNotification.belongsTo(models.UserId, { foreignKey: "UserId" })
+      UserNotification.belongsTo(models.User, { foreignKey: "UserId" })
     }
   }
   UserNotification.init({

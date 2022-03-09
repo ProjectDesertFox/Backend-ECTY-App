@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       Itinerary.hasOne(models.GroupChat, { foreignKey: "ItineraryId" })
       Itinerary.hasMany(models.ItineraryPlace, { foreignKey: "ItineraryId" })
       Itinerary.hasMany(models.ItineraryTransportation, { foreignKey: "ItineraryId" })
-      Itinerary.belongsTo(models.UserId, { foreignKey: "UserId" })
+      Itinerary.belongsTo(models.User, { foreignKey: "UserId" })
     }
   }
   Itinerary.init({
