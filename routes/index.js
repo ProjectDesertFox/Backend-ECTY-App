@@ -7,6 +7,8 @@ const userNotificationRouter = require('./userNotificationRouter')
 const itineraryTransportationRouter = require('./itineraryTransporationsRouter')
 const itineraryPlacesRouter = require('./itineraryPlacesRouter')
 const groupMemberRouter = require('./groupMemberRouter')
+const userRoutes = require('./User')
+const verificationRoutes = require('./verificationRoute')
 
 router.post('/register', userController.register)
 router.post('/login', userController.login)
@@ -15,4 +17,7 @@ router.use('/userNotification', userNotificationRouter)
 router.use('/itineraryTransportation', itineraryTransportationRouter)
 router.use('/itineraryPlaces', itineraryPlacesRouter)
 router.use('/groupMember', groupMemberRouter)
+router.use('/verification', verificationRoutes)
+router.use('/users', userRoutes)
+
 module.exports = router

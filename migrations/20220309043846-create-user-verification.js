@@ -1,16 +1,25 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('FriendLists', {
+    await queryInterface.createTable('UserVerifications', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      validEmail: {
+        type: Sequelize.STRING
+      },
+      validPhoneNumber: {
+        type: Sequelize.STRING
+      },
+      validKTP: {
+        type: Sequelize.STRING
+      },
       UserId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        unique: true,
         references: {
           model: 'Users',
           key: 'id'
@@ -18,15 +27,12 @@ module.exports = {
         onUpdate: 'cascade',
         onDelete: 'cascade'
       },
-      FriendId: {
+      UserEmail: {
         type: Sequelize.STRING,
-        allowNull: false,
-        references: {
-          model: 'Users',
-          key: 'EctyId'
-        },
-        onUpdate: 'cascade',
-        onDelete: 'cascade'
+        unique: true
+      },
+      UniqueNumberVerificationEmail: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -39,6 +45,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('FriendLists');
+    await queryInterface.dropTable('UserVerifications');
   }
 };
