@@ -1,0 +1,46 @@
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class GroupChat extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+      GroupChat.belongsTo(models.Itinerary, { foreignKey: "ItineraryId" })
+    }
+  }
+  GroupChat.init({
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Name is Required"
+        }
+      }
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'Active'
+    },
+    ItineraryId: {
+      type: DataTypes.Integer,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Itinerary Id is Required"
+        }
+      }
+    }
+  }, {
+    sequelize,
+    modelName: 'GroupChat',
+  });
+  return GroupChat;
+};
