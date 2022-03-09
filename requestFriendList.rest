@@ -1,0 +1,4 @@
+### GET FRIEND LIST
+GET http://localhost:3000/friendList
+Content-Type: application/json
+access_token: 

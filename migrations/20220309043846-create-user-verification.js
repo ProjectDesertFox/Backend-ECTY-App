@@ -1,38 +1,25 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Itineraries', {
+    await queryInterface.createTable('UserVerifications', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      destination: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      dateStart: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      dateEnd: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      rating: {
+      validEmail: {
         type: Sequelize.STRING
       },
-      budget: {
-        type: Sequelize.INTEGER
+      validPhoneNumber: {
+        type: Sequelize.STRING
+      },
+      validKTP: {
+        type: Sequelize.STRING
       },
       UserId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        unique: true,
         references: {
           model: 'Users',
           key: 'id'
@@ -40,16 +27,12 @@ module.exports = {
         onUpdate: 'cascade',
         onDelete: 'cascade'
       },
-      status: {
+      UserEmail: {
         type: Sequelize.STRING,
-        allowNull: false
+        unique: true
       },
-      sharingMemberSlot:{
-        type: Sequelize.INTEGER
-      },
-      type:{
-        type: Sequelize.STRING,
-        allowNull: false
+      UniqueNumberVerificationEmail: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -62,6 +45,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Itineraries');
+    await queryInterface.dropTable('UserVerifications');
   }
 };

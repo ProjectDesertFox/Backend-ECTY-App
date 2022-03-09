@@ -27,6 +27,16 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    sharingMemberSlot: DataTypes.INTEGER,
+    type: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Type is Required"
+        }
+      }
+    },
     destination: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -69,6 +79,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue: 'Active'
+    },
+    sharingMemberSlot: DataTypes.INTEGER,
+    type: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Type is Required"
+        }
+      }
     }
   }, {
     sequelize,
