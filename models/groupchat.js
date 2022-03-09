@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 'Active'
     },
     ItineraryId: {
-      type: DataTypes.Integer,
+      type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
         notEmpty: {
