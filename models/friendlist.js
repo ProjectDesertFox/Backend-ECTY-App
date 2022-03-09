@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     FriendId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: {

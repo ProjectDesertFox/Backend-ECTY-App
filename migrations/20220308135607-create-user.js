@@ -29,7 +29,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       EctyId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
         unique: true
       },
