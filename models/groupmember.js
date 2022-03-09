@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       GroupMember.hasMany(models.GroupMessage, { foreignKey: "GroupMemberId" })
-      GroupMember.belongsTo(models.GroupChatId, { foreignKey: "GroupChatId" })
-      GroupMember.belongsTo(models.UserId, { foreignKey: "UserId" })
+      GroupMember.belongsTo(models.GroupChat, { foreignKey: "GroupChatId" })
+      GroupMember.belongsTo(models.User, { foreignKey: "UserId" })
     }
   }
   GroupMember.init({
