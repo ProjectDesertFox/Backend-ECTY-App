@@ -26,6 +26,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       defaultValue: 'false'
     },
+    statusValidEmail: {
+      type : DataTypes.STRING,
+      defaultValue: '2'
+    },
+    statusValidPhoneNumber: {
+      type : DataTypes.STRING,
+      defaultValue: '2'
+    },
     UserId:{
       type : DataTypes.INTEGER
     },
