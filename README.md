@@ -71,3 +71,7 @@
     # verification phone number
   # 35. /verification/ktp
     # verification ktp
+  # 36. /verification/email
+    # send 4 digit code to verification email
+  # 37. /verification/email-verification
+    # to check and confirm email has been verified
