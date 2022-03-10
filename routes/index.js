@@ -11,7 +11,6 @@ const itineraryPlacesRouter = require('./itineraryPlacesRouter')
 const groupMemberRouter = require('./groupMemberRouter')
 const userRoutes = require('./User')
 const verificationRoutes = require('./verificationRoute')
-const {authentication} = require('../middlewares/auth')
 
 
 router.post('/register', userController.register)
