@@ -1,60 +1,65 @@
-const { itinerary, itineraryTransportation, itineraryPlaces, groupchat } = require('../models/index.js')
+const { Itinerary, ItineraryTransportation, ItineraryPlace, GroupChat, sequelize } = require('../models/index.js')
 
 
 class ControllerItinerary {
 
-    static addItinerary(req, res, next){
-
+    static async addItinerary(req, res, next) {
+        console.log(req.body)
         const dataItinerary = {
             title: req.body.title,
-            destinasion: req.body.destinasion,
+            destination: req.body.destination,
             dateStart: req.body.dateStart,
             dateEnd: req.body.dateEnd,
-            rating: req.body.rating,
+            rating: req.body.ratingItinerary,
             budget: req.body.budget,
-            status: req.body.status,
+            sharingMemberSlot: req.body.sharingMemberSlot,
+            type: req.body.type,
             UserId: req.UserId,
         }
 
-        let transaction;
+        // let transaction;
         try {
-            transaction = await sequelize.transaction()
-            const Itineraries = await itinerary.create(dataItinerary, {transaction})
+            // transaction = await sequelize.transaction()
+            const Itineraries = await Itinerary.create(dataItinerary)
+            // console.log(Itineraries.dataValues.id, '+++++++++++++++++++++++=')
 
-            const chat = await groupchat.create({
-                name: req.body.name,
+
+            const chat = await GroupChat.create({
+                name: req.body.nameGroup,
                 status: req.body.status,
-                IteneryId: Itineraries.id,
-            },{transaction})
+                ItineraryId: Itineraries.dataValues.id,
+            })
 
-            const place = await itineraryPlaces.create({
-                name: req.body.name,
-                description: req.body.description,
-                estimatedPrice: req.body.estimatedPrice,
-                rating: req.body.rating,
+            const place = await ItineraryPlace.create({
+                name: req.body.namePlace,
+                description: req.body.descriptionPlace,
+                estimatedPrice: req.body.estimatedPricePlace,
+                rating: req.body.ratingPlace,
                 itineraryOrder: req.body.itineraryOrder,
-                date: req.body.date,
+                date: req.body.datePlace,
                 status: req.body.status,
-                ItineraryId: Itineraries.id 
-            }, {transaction})
+                ItineraryId: Itineraries.dataValues.id 
+            })
 
-            const transportation = await itineraryTransportation.create({
+            const transportation = await ItineraryTransportation.create({
                 transportationType: req.body.transportationType,
                 from: req.body.from,
                 to: req.body.to,
                 distance: req.body.distance,
                 estimatedTime: req.body.estimatedTime,
-                estimatedPrice: req.body.estimatedPrice,
-                ItineraryId: Itineraries.id
-            },{transaction})
-            await transaction.commit()
-            
+                estimatedPrice: req.body.estimatedPriceTrans,
+                ItineraryId: Itineraries.dataValues.id
+            })
+            // await transaction.commit()
+            return res.status(201).json('Succes')
+
         } catch (error) {
+            console.log(error)
             if(transaction){
-                await transaction.rollback()
+                // await transaction.rollback()
             }
         }
-        
+
         // const data = {
         //     title: req.body.title,
         //     destinasion: req.body.destinasion,
@@ -66,7 +71,7 @@ class ControllerItinerary {
         //     UserId: req.UserId,
         // }
 
-        // itinerary.create(data)
+        // Itinerary.create(data)
         //     .then(data => {
         //         res.status(201).json({
         //             title: data.title,
@@ -84,7 +89,7 @@ class ControllerItinerary {
     static fetchOne(req, res, next) {
         let id = req.params.id
 
-        itinerary.findOne({
+        Itinerary.findOne({
             where: { id }
         })
             .then(data => {
@@ -99,21 +104,21 @@ class ControllerItinerary {
 
     static update(req, res, next) {
         let id = req.params.id
-        const {title, destinasion, dateStart, dateEnd, rating, budget, status} = req.body
+        const { title, destinasion, dateStart, dateEnd, rating, budget, status } = req.body
         let UserId = req.id
-        itinerary.update({title, destinasion, dateStart, dateEnd, rating, budget, status, UserId}, {where : {id}})
+        Itinerary.update({ title, destinasion, dateStart, dateEnd, rating, budget, status, UserId }, { where: { id } })
             .then(data => {
-                if(data[0] === 0){
+                if (data[0] === 0) {
                     res.status(404).json({
                         message: `Item with id ${id} not found`
                     })
                 } else {
                     res.status(201).json({
-                        message : `Item with id ${id} Updated`
+                        message: `Item with id ${id} Updated`
                     })
                 }
             })
-            .catch(err =>{
+            .catch(err => {
                 console.log(err)
             })
     }
@@ -121,23 +126,23 @@ class ControllerItinerary {
     static delete(req, res, next) {
         let id = req.params.id
 
-        itinerary.destroy({
-            where: {id}
+        Itinerary.destroy({
+            where: { id }
         })
-        .then(data =>{
-            if(data === 0){
-                res.status(404).json({
-                    message: `Item with id ${id} not found`
-                })
-            } else {
-                res.status(200).json({
-                    message: `Item with id ${id} Deleted`
-                })
-            }
-        })
-        .catch(err =>{
-            console.log(err)
-        })
+            .then(data => {
+                if (data === 0) {
+                    res.status(404).json({
+                        message: `Item with id ${id} not found`
+                    })
+                } else {
+                    res.status(200).json({
+                        message: `Item with id ${id} Deleted`
+                    })
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 }
 

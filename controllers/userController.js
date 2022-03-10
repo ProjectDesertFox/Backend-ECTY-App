@@ -51,7 +51,7 @@ module.exports = class userController {
         //const t = await sequelize.transaction()
         try {
             const user = await User.create({ username, email, password, planStatus, EctyId })
-            const userVerify = await UserVerification.update({UserId:user.id},{where:{UserEmail:user.email}})
+            const userVerify = await UserVerification.update({UserId:user.id, statusValidEmail:'done'},{where:{UserEmail:user.email}})
             //await t.commit()
             res.status(201).json({user, userVerify})
         } catch (error) {
