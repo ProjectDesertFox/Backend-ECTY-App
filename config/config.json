@@ -1,9 +1,17 @@
 {
   "development": {
     "username": "postgres",
-    "password": "hellosun",
+    "password": "postgres",
     "database": "ECTY",
     "host": "localhost",
     "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "dialectOptions": {
+      "ssl": {
+        "rejectUnauthorized": false
+      }
+    }
   }
 }

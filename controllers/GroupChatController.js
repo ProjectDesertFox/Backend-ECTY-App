@@ -1,4 +1,4 @@
-const {groupchat, sequelize, itinerary, groupmember, itineraryTransportation, itineraryPlaces} = require('../models/index.js')
+const {GroupChat} = require('../models/index.js')
 
 
 class ControllerGroupChat {
@@ -8,10 +8,10 @@ class ControllerGroupChat {
         const data = {
             name: req.body.name,
             status: req.body.status,
-            IteneryId: req.body.IteneryId,
+            ItineraryId: req.body.ItineraryId,
         }
-
-        groupchat.create(data)
+        console.log(data)
+        GroupChat.create(data)
             .then(data => {
                 res.status(201).json({
                     name: data.name,
@@ -19,68 +19,16 @@ class ControllerGroupChat {
                 })
             })
             .catch(err => {
-                console.log('err dari Add chat')
+                console.log(err)
                 res.status(500).json(err)
             })
-
-        // const dataItinerary = {
-        //     title: req.body.title,
-        //     destinasion: req.body.destinasion,
-        //     dateStart: req.body.dateStart,
-        //     dateEnd: req.body.dateEnd,
-        //     rating: req.body.rating,
-        //     budget: req.body.budget,
-        //     status: req.body.status,
-        //     UserId: req.UserId,
-        // }
-
-        // let transaction;
-        // try {
-        //     transaction = await sequelize.transaction()
-        //     const Itineraries = await itinerary.create(dataItinerary, {transaction})
-
-        //     const chat = await groupchat.create({
-        //         name: req.body.name,
-        //         status: req.body.status,
-        //         IteneryId: Itineraries.id,
-        //     },{transaction})
-        //     const member = await groupmember.create({
-        //         GroupChatId: chat.id,
-        //         UserId: req.UserId
-        //     }, {transaction})
-        //     const place = await itineraryPlaces.create({
-        //         name: req.body.name,
-        //         description: req.body.description,
-        //         estimatedPrice: req.body.estimatedPrice,
-        //         rating: req.body.rating,
-        //         itineraryOrder: req.body.itineraryOrder,
-        //         date: req.body.date,
-        //         status: req.body.status,
-        //         ItineraryId: Itineraries.id 
-        //     }, {transaction})
-        //     const transportation = await itineraryTransportation.create({
-        //         transportationType: req.body.transportationType,
-        //         from: req.body.from,
-        //         to: req.body.to,
-        //         distance: req.body.distance,
-        //         estimatedTime: req.body.estimatedTime,
-        //         estimatedPrice: req.body.estimatedPrice,
-        //         ItineraryId: Itineraries.id
-        //     },{transaction})
-        //     await transaction.commit()
-            
-        // } catch (error) {
-        //     if(transaction){
-        //         await transaction.rollback()
-        //     }
-        // }
         
     }
 
     static fetchOne(req, res, next) {
         let id = req.params.id
 
-        itinerary.findOne({
+        GroupChat.findOne({
             where: { id }
         })
             .then(data => {
@@ -96,7 +44,7 @@ class ControllerGroupChat {
     static update(req, res, next) {
         let id = req.params.id
         const {name, ItineraryId} = req.body
-        groupchat.update({name, ItineraryId}, {where : {id}})
+        GroupChat.update({name, ItineraryId}, {where : {id}})
             .then(data => {
                 if(data[0] === 0){
                     res.status(404).json({
@@ -116,7 +64,7 @@ class ControllerGroupChat {
     static delete(req, res, next) {
         let id = req.params.id
 
-        groupchat.destroy({
+        GroupChat.destroy({
             where: {id}
         })
         .then(data =>{

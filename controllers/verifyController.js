@@ -1,4 +1,4 @@
-const {sendMail} = require('../helper/nodemailer')
+const { sendMail } = require('../helper/nodemailer')
 const { User, UserVerification } = require('../models')
 
 module.exports = class verificationController {
@@ -19,15 +19,24 @@ module.exports = class verificationController {
 
         UserVerification.create({ UserEmail, UniqueNumberVerificationEmail })
             .then(data => {
-                res.status(200).json({
+                res.status(201).json({
                     success: true, message: `Success Sent Verification code to ${data.UserEmail}, kindly check your email!!`
                 })
                 sendMail(data.UserEmail, 'ECTY Email Verification', `Please insert this number ${data.UniqueNumberVerificationEmail} to continue process verification email to registration`)
             })
+            .catch(err => {
+                console.log(err);
+                if (err.name === 'SequelizeUniqueConstraintError') {
+                    let contrainError = err.errors.map(element => element.message)
+                    next({ status: 400, message: contrainError })
+                } else {
+                    next(err)
+                }
+            })
     }
     static async checkEmailVerification(req, res, next) {
         try {
-            let{UserEmail, UniqueNumberVerificationEmail}= req.body
+            let { UserEmail, UniqueNumberVerificationEmail } = req.body
 
             let checkUser = await UserVerification.findAll({
                 where: {
@@ -36,12 +45,15 @@ module.exports = class verificationController {
                 }
             })
             console.log(checkUser[0].dataValues, '=======');
-            if(checkUser.length !== null){
+            if (checkUser.length !== null) {
                 let validEmail = true
-                let updateUser = await UserVerification.update({validEmail}, {where:{id:checkUser[0].dataValues.id}})
-                return res.status(201).json(updateUser)
+                let updateUser = await UserVerification.update({ validEmail }, { where: { id: checkUser[0].dataValues.id } })
+                return res.status(201).json({ message: 'Email verification succes' })
+            } else {
+                return res.status(400).json({ message: 'Fail to check Email' })
             }
         } catch (error) {
+            console.log(error);
             next(error)
         }
 
