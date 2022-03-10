@@ -19,8 +19,9 @@ module.exports = class verificationController {
 
         UserVerification.create({ UserEmail, UniqueNumberVerificationEmail })
             .then(data => {
+                //UserVerification.update({statusValidEmail:'2'}, {where:{UserEmail:data.UserEmail}})
                 res.status(201).json({
-                    success: true, message: `Success Sent Verification code to ${data.UserEmail}, kindly check your email!!`
+                    success: true, message: `Success Sent Verification code to ${data.UserEmail}, kindly check your email!!`, data:data
                 })
                 sendMail(data.UserEmail, 'ECTY Email Verification', `Please insert this number ${data.UniqueNumberVerificationEmail} to continue process verification email to registration`)
             })
@@ -47,8 +48,8 @@ module.exports = class verificationController {
             console.log(checkUser[0].dataValues, '=======');
             if (checkUser.length !== null) {
                 let validEmail = true
-                let updateUser = await UserVerification.update({ validEmail }, { where: { id: checkUser[0].dataValues.id } })
-                return res.status(201).json({ message: 'Email verification succes' })
+                let updateUser = await UserVerification.update({ validEmail, statusValidEmail:'3' }, { where: { id: checkUser[0].dataValues.id } })
+                return res.status(201).json({ message: 'Email verification succes', status: updateUser.statusValidEmail })
             } else {
                 return res.status(400).json({ message: 'Fail to check Email' })
             }
@@ -58,4 +59,5 @@ module.exports = class verificationController {
         }
 
     }
+
 }

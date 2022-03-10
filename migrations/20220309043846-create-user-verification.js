@@ -17,6 +17,12 @@ module.exports = {
       validKTP: {
         type: Sequelize.STRING
       },
+      statusValidEmail: {
+        type : Sequelize.STRING,
+      },
+      statusValidPhoneNumber: {
+        type : Sequelize.STRING
+      },
       UserId: {
         type: Sequelize.INTEGER,
         unique: true,
