@@ -4,6 +4,7 @@ const router = require('express').Router()
 // Email verification
 router.post('/email', verificationController.sendEmailVerification)
 router.patch('/email-verification', verificationController.checkEmailVerification)
+router.get('/:email', verificationController.getOne)
 //router.get('/status/:email', verificationController)
 
 module.exports = router

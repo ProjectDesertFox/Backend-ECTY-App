@@ -60,4 +60,20 @@ module.exports = class verificationController {
 
     }
 
+    static getOne(req, res, next) {
+        let UserEmail = req.params.email
+
+        UserVerification.findOne({
+            where: { UserEmail }
+        })
+            .then(data => {
+                res.status(201).json({
+                    items: data
+                })
+            })
+            .catch(err => {
+                next(err)
+            })
+    }
+
 }
