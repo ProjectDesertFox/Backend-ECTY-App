@@ -1,5 +1,6 @@
 const {ItineraryTransportation} = require('../models')
 class itineraryTransportationController {
+  
   static async getOne (req, res, next) {
     try {
       const itineraryTransportation = await ItineraryTransportation.findOne({where: {id: +req.params.id}})
@@ -14,8 +15,8 @@ class itineraryTransportationController {
   }
   static async updateItineraryTransportation (req, res, next) {
     try {
-      const {name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId, status} = req.body
-      const itineraryTransportation = await itineraryTransportation.update({name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId, status}, {where: {id: +req.params.id}, returning: true, plain:true})
+      const {transportationType, from, to, distance, estimatedtime, estimatedPrice, ItineraryId} = req.body
+      const itineraryTransportation = await itineraryTransportation.update({transportationType, from, to, distance, estimatedtime, estimatedPrice, ItineraryId}, {where: {id: +req.params.id}, returning: true, plain:true})
 
       if(itineraryTransportation[0] === 0 ){
         next({status: 404, message: `Itinerary Transportation with id ${req.params.id} not found`})
@@ -46,9 +47,9 @@ class itineraryTransportationController {
   }
   static async addItineraryTransportation (req, res, next) {
     try {
-      const {name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId} = req.body
-      const status = 'Active'
-      let itineraryTransportation = await ItineraryTransportation.create({name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId, status})
+      const {transportationType, from, to, distance, estimatedtime, estimatedPrice, ItineraryId} = req.body
+
+      let itineraryTransportation = await ItineraryTransportation.create({transportationType, from, to, distance, estimatedtime, estimatedPrice, ItineraryId})
       res.status(201).json(itineraryTransportation)
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {

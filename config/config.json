@@ -13,5 +13,12 @@
         "rejectUnauthorized": false
       }
     }
+  },
+  "test": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "ECTY_test",
+    "host": "localhost",
+    "dialect": "postgres"
   }
 }
