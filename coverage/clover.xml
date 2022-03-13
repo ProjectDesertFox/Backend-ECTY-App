@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1647015005909" clover="3.2.0">
-  <project timestamp="1647015005909" name="All files">
-    <metrics statements="511" coveredstatements="209" conditionals="93" coveredconditionals="7" methods="106" coveredmethods="24" elements="710" coveredelements="240" complexity="0" loc="511" ncloc="511" packages="8" files="35" classes="35"/>
+<coverage generated="1647148024123" clover="3.2.0">
+  <project timestamp="1647148024123" name="All files">
+    <metrics statements="524" coveredstatements="211" conditionals="93" coveredconditionals="7" methods="112" coveredmethods="24" elements="729" coveredelements="242" complexity="0" loc="524" ncloc="524" packages="8" files="35" classes="35"/>
     <package name="Backend-ETCY-App">
       <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
       <file name="app.js" path="D:\Hacktive8\Phase3\ProjectETCY\Backend-ETCY-App\app.js">
@@ -9,19 +9,19 @@
         <line num="1" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
       </file>
     </package>
     <package name="Backend-ETCY-App.controllers">
-      <metrics statements="293" coveredstatements="21" conditionals="70" coveredconditionals="0" methods="72" coveredmethods="0"/>
+      <metrics statements="304" coveredstatements="21" conditionals="70" coveredconditionals="0" methods="78" coveredmethods="0"/>
       <file name="GroupChatController.js" path="D:\Hacktive8\Phase3\ProjectETCY\Backend-ETCY-App\controllers\GroupChatController.js">
         <metrics statements="25" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="12" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -51,35 +51,46 @@
         <line num="88" count="1" type="stmt"/>
       </file>
       <file name="ItineraryController.js" path="D:\Hacktive8\Phase3\ProjectETCY\Backend-ETCY-App\controllers\ItineraryController.js">
-        <metrics statements="28" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="10" coveredmethods="0"/>
+        <metrics statements="39" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="16" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
         <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
         <line num="73" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
         <line num="78" count="0" type="stmt"/>
         <line num="79" count="0" type="stmt"/>
-        <line num="80" count="0" type="stmt"/>
-        <line num="81" count="0" type="stmt"/>
-        <line num="83" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="84" count="0" type="stmt"/>
-        <line num="88" count="0" type="stmt"/>
-        <line num="94" count="0" type="stmt"/>
-        <line num="99" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
         <line num="101" count="0" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
         <line num="105" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="106" count="0" type="stmt"/>
         <line num="110" count="0" type="stmt"/>
         <line num="116" count="0" type="stmt"/>
-        <line num="121" count="1" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="123" count="0" type="stmt"/>
+        <line num="127" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="138" count="0" type="stmt"/>
+        <line num="143" count="1" type="stmt"/>
       </file>
       <file name="friendListController.js" path="D:\Hacktive8\Phase3\ProjectETCY\Backend-ETCY-App\controllers\friendListController.js">
         <metrics statements="26" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
@@ -629,9 +640,9 @@
       </file>
     </package>
     <package name="Backend-ETCY-App.routes.ItineraryRoute">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.js" path="D:\Hacktive8\Phase3\ProjectETCY\Backend-ETCY-App\routes\ItineraryRoute\index.js">
-        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -639,7 +650,9 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
       </file>
     </package>
   </project>

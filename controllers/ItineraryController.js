@@ -16,6 +16,7 @@ class ControllerItinerary {
             type: req.body.type,
             UserId: req.UserId,
         }
+        console.log(dataItinerary);
 
         // let transaction;
         try {
@@ -59,7 +60,14 @@ class ControllerItinerary {
         }
     }
     static fetchAllItinerary(req, res, next){
-
+        Itinerary.findAll()
+        .then(itineraries=>{
+            res.status(200).json(itineraries)
+        })
+        .catch(err=>{
+            console.log(err)
+            next(err)
+        })
     }
     static fetchAllItineraryMyList(req, res, next){
         Itinerary.findAll({where: {UserId:req.UserId}})
