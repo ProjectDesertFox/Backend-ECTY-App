@@ -71,7 +71,20 @@
     ```
         {
             "success": true,
-            "message": "Success Sent Verification code to mocap.fifit14@gmail.com, kindly check your email!!"
+            "message": "Success Sent Verification code to bayuindr2207@gmail.com, kindly check your email!!",
+            "data": {
+                "validEmail": "false",
+                "validPhoneNumber": "false",
+                "validKTP": "false",
+                "statusValidEmail": "2",
+                "statusValidPhoneNumber": "2",
+                "id": 3,
+                "UserEmail": "bayuindr2207@gmail.com",
+                "UniqueNumberVerificationEmail": "3352",
+                "updatedAt": "2022-03-10T12:19:20.539Z",
+                "createdAt": "2022-03-10T12:19:20.539Z",
+                "UserId": null
+            }
         }
     ```
 * Error Response :
@@ -133,7 +146,7 @@
         }
     ```
 ---
-### RGISTER
+### REGISTER
 ---
 
 
@@ -156,8 +169,21 @@
     * Content :
     ```
         {
-            "success": true,
-            "message": "Success Sent Verification code to mocap.fifit14@gmail.com, kindly check your email!!"
+           "user": {
+                "id": 1,
+                "username": "bayu",
+                "email": "bayuindr2207@gmail.com",
+                "password": "$2a$10$h3A1U0r5YRo6VHDWxec8qeuH.7kW4dwlM.CnILvz18f2XEfS0acF2",
+                "planStatus": "Basic",
+                "EctyId": "72911665",
+                "updatedAt": "2022-03-10T12:22:08.401Z",
+                "createdAt": "2022-03-10T12:22:08.401Z",
+                "phoneNumber": null,
+                "ktp": null
+            },
+            "userVerify": [
+                1
+            ]
         }
     ```
 * Error Response :
@@ -167,7 +193,71 @@
         {
             "success": false,
             "message": [
-                "UserEmail must be unique"
+                "Username is Required"
+            ]
+        }
+    ```
+    * Code : 400 Bad Request
+    * Content :
+    ```
+        {
+            "success": false,
+            "message": [
+                "email must be unique"
+            ]
+        }
+    ```
+    * Code : 400 Bad Request
+    * Content :
+    ```
+        {
+            "success": false,
+            "message": [
+                "Username is Required",
+                "Format Email is not Valid",
+                "Email is Required",
+                "Password is Required",
+                "Password Characters minimun is 5"
+            ]
+        }
+    ```
+    * Code : 400 Bad Request
+    * Content :
+    ```
+        {
+            "success": false,
+            "message": [
+                "User.email cannot be null"
+            ]
+        }
+    ```
+    * Code : 400 Bad Request
+    * Content :
+    ```
+        {
+            "success": false,
+            "message": [
+                "Format Email is not Valid"
+            ]
+        }
+    ```
+    * Code : 400 Bad Request
+    * Content :
+    ```
+        {
+            "success": false,
+            "message": [
+                "User.password cannot be null"
+            ]
+        }
+    ```
+    * Code : 400 Bad Request
+    * Content :
+    ```
+        {
+            "success": false,
+            "message": [
+                "Password Characters minimun is 5"
             ]
         }
     ```
@@ -180,15 +270,15 @@
         }
     ```
 ---
-## CATEGORY
+## USER
 ---
 
 ---
-### GET DATA CATEGORY
+### GET ALL DATA USER
 ---
 * URL
 
-    /categories
+    /users
 
 * Method :
 
@@ -202,38 +292,20 @@
     * Code : 200
     * Content :
     ```
-        {
-            "categories": [
-                {
-                    "id": 2,
-                    "name": "Grooming Kutu",
-                    "description": "Grooming bersih dengan shampo yang khusus untuk kutu serta obat kutu",
-                    "createdAt": "2022-01-18T13:17:30.256Z",
-                    "updatedAt": "2022-01-18T13:17:30.256Z"
-                },
-                {
-                    "id": 3,
-                    "name": "Grooming Jamur",
-                    "description": "Grooming bersih dengan shampo yang khusus untuk jamur serta obat jamur",
-                    "createdAt": "2022-01-18T13:17:30.256Z",
-                    "updatedAt": "2022-01-18T13:17:30.256Z"
-                },
-                {
-                    "id": 4,
-                    "name": "Grooming Complete",
-                    "description": "Kombinasi dari grooming kutu dan jamur untuk hasil yang lebh maksimal",
-                    "createdAt": "2022-01-18T13:17:30.256Z",
-                    "updatedAt": "2022-01-18T13:17:30.256Z"
-                },
-                {
-                    "id": 1,
-                    "name": "Grooming Standart",
-                    "description": "Grooming bersih dengan shampo Khusus yang harum dan berkualitas",
-                    "createdAt": "2022-01-18T13:17:30.256Z",
-                    "updatedAt": "2022-01-18T13:17:30.256Z"
-                }
-            ]
-        }
+        [
+            {
+                "id": 1,
+                "username": "bayu",
+                "email": "bayuindr2207@gmail.com",
+                "password": "$2a$10$h3A1U0r5YRo6VHDWxec8qeuH.7kW4dwlM.CnILvz18f2XEfS0acF2",
+                "phoneNumber": null,
+                "ktp": null,
+                "EctyId": "72911665",
+                "planStatus": "Basic",
+                "createdAt": "2022-03-10T12:22:08.401Z",
+                "updatedAt": "2022-03-10T12:22:08.401Z"
+            }
+        ]
     ```
 * Error Response :
     * Code : 500
@@ -245,11 +317,11 @@
         }
     ```
 ---
-### GET ONE DATA CATEGORY
+### GET ONE DATA USER
 ---
 * URL
 
-    /categories/:id
+    /users/:id
 
 * Method:
 
@@ -270,13 +342,16 @@
     * Content :
     ```
         {
-            "category": {
-                "id": 1,
-                "name": "Grooming Standart",
-                "description": "Grooming bersih dengan shampo Khusus yang harum dan berkualitas",
-                "createdAt": "2022-01-18T13:17:30.256Z",
-                "updatedAt": "2022-01-18T13:17:30.256Z"
-            }
+            "id": 1,
+            "username": "bayu",
+            "email": "bayuindr2207@gmail.com",
+            "password": "$2a$10$h3A1U0r5YRo6VHDWxec8qeuH.7kW4dwlM.CnILvz18f2XEfS0acF2",
+            "phoneNumber": null,
+            "ktp": null,
+            "EctyId": "72911665",
+            "planStatus": "Basic",
+            "createdAt": "2022-03-10T12:22:08.401Z",
+            "updatedAt": "2022-03-10T12:22:08.401Z"
         }
     ```
 * Error Response :
@@ -284,7 +359,7 @@
     * Content :
     ```
         {
-            "message": "Data Category dengan id ${id} tidak ditemukan"
+            "message": "Data User with id 4 not found"
         }
     ```
      * Code : 500
@@ -295,7 +370,56 @@
             "error": "Internal Server Error"
         }
     ```
+---
+### DELETE USER
+---
 
+* URL
+
+    /users/:id
+
+* Method:
+
+    DELETE
+
+* Header
+
+    access_token : 'string token'
+
+* URL Params
+
+    /:id
+
+    Required:
+
+        ```
+        id = [integer]
+        ```
+
+* Success
+    * Code : 200 OK
+    * Content :
+    ```
+        {
+            "message": "success delete data"
+        }
+    ```
+* Error Response :
+    * Code : 404 Not Found
+    * Content :
+    ```
+        {
+            "message":  `data with ${id} not found`
+        }
+    ```
+     * Code : 500
+     * Content :
+    ```
+        {
+            "success": false,
+            "error": "Internal Server Error"
+        }
+    ```
 ---
 ### GET DATA BOOKING
 ---

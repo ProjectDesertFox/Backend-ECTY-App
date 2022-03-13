@@ -54,7 +54,7 @@ module.exports = class userController {
             const user = await User.create({ username, email, password, planStatus, EctyId })
             const userVerify = await UserVerification.update({UserId:user.id, statusValidEmail:'done'},{where:{UserEmail:user.email}})
             //await t.commit()
-            res.status(201).json({user, userVerify})
+            res.status(201).json({message:'Register Success',user, userVerify})
         } catch (error) {
             //await t.rollback()
             if (error.name === 'SequelizeValidationError') {

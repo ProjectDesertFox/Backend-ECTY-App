@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const { User } = require('../models')
+const { User, Itinerary } = require('../models')
 
 module.exports = {
     authentication(req, res, next) {
@@ -27,6 +27,9 @@ module.exports = {
             })
             
         }
+    },
+    authorizationFetchAllItinerary(req,res,next){
+        
     }
 }
 

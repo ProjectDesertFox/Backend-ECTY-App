@@ -8,7 +8,8 @@ module.exports = class verificationController {
             let randNum = ''
 
             for (let i = 0; i < len; i++) {
-                const tempRandomNumber = Math.floor((Math.random() * 10) + 1)
+                console.log('loop');
+                const tempRandomNumber = Math.floor((Math.random() * 9) + 1)
                 randNum += tempRandomNumber
             }
             return randNum
@@ -26,7 +27,7 @@ module.exports = class verificationController {
                 sendMail(data.UserEmail, 'ECTY Email Verification', `Please insert this number ${data.UniqueNumberVerificationEmail} to continue process verification email to registration`)
             })
             .catch(err => {
-                console.log(err);
+                //console.log(err);
                 if (err.name === 'SequelizeUniqueConstraintError') {
                     let contrainError = err.errors.map(element => element.message)
                     next({ status: 400, message: contrainError })
@@ -45,7 +46,7 @@ module.exports = class verificationController {
                     UniqueNumberVerificationEmail: UniqueNumberVerificationEmail
                 }
             })
-            console.log(checkUser[0].dataValues, '=======');
+            //console.log(checkUser[0].dataValues, '=======');
             if (checkUser.length !== null) {
                 let validEmail = true
                 let updateUser = await UserVerification.update({ validEmail, statusValidEmail:'3' }, { where: { id: checkUser[0].dataValues.id } })
@@ -54,7 +55,7 @@ module.exports = class verificationController {
                 return res.status(400).json({ message: 'Fail to check Email' })
             }
         } catch (error) {
-            console.log(error);
+            console.log(error,'**********************');
             next(error)
         }
 

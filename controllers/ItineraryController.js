@@ -51,11 +51,25 @@ class ControllerItinerary {
                 ItineraryId: Itineraries.dataValues.id
             })
             // await transaction.commit()
-            return res.status(201).json('Succes create Itinerary')
+            return res.status(201).json({message: 'Succes create Itinerary', Itineraries})
 
         } catch (error) {
+            console.log(error);
             next(error)
         }
+    }
+    static fetchAllItinerary(req, res, next){
+
+    }
+    static fetchAllItineraryMyList(req, res, next){
+        Itinerary.findAll({where: {UserId:req.UserId}})
+        .then(itineraries =>{
+            res.status(200).json(itineraries)
+        })
+        .catch(err =>{
+            console.log(err);
+            next(err)
+        })
     }
 
     static fetchOne(req, res, next) {
@@ -65,7 +79,7 @@ class ControllerItinerary {
             where: { id }
         })
             .then(data => {
-                res.status(201).json({
+                res.status(200).json({
                     items: data
                 })
             })
@@ -82,11 +96,11 @@ class ControllerItinerary {
             .then(data => {
                 if (data[0] === 0) {
                     res.status(404).json({
-                        message: `Item with id ${id} not found`
+                        message: `Itinerary with id ${id} not found`
                     })
                 } else {
                     res.status(201).json({
-                        message: `Item with id ${id} Updated`
+                        message: `Itinerary with id ${id} Updated`
                     })
                 }
             })
@@ -104,11 +118,11 @@ class ControllerItinerary {
             .then(data => {
                 if (data === 0) {
                     res.status(404).json({
-                        message: `Item with id ${id} not found`
+                        message: `Itinerary with id ${id} not found`
                     })
                 } else {
                     res.status(200).json({
-                        message: `Item with id ${id} Deleted`
+                        message: `Itinerary with id ${id} Deleted`
                     })
                 }
             })

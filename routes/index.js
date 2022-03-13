@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const {authentication} = require ('../middlewares/auth.js')
 const userController = require ('../controllers/userController')
 const Itineraries = require('./ItineraryRoute/index.js')
 const groupChat = require('./GroupChatRoute')
