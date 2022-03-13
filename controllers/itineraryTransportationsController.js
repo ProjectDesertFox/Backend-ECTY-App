@@ -50,7 +50,7 @@ class itineraryTransportationController {
       const {transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId} = req.body
 
       let itineraryTransportation = await ItineraryTransportation.create({transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId})
-      res.status(201).json(itineraryTransportation)
+      res.status(201).json({message: 'Success to create Itinerary Transportation', itineraryTransportation})
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {
         let validation = err.errors.map(el => el.message)

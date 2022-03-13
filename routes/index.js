@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const {authentication} = require ('../middlewares/auth.js')
 const userController = require ('../controllers/userController')
 const Itineraries = require('./ItineraryRoute/index.js')
 const groupChat = require('./GroupChatRoute')
@@ -11,6 +10,7 @@ const itineraryPlacesRouter = require('./itineraryPlacesRouter')
 const groupMemberRouter = require('./groupMemberRouter')
 const userRoutes = require('./User')
 const verificationRoutes = require('./verificationRoute')
+const {authentication} = require('../middlewares/auth.js')
 
 
 router.post('/register', userController.register)

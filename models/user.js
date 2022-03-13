@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.hasMany(models.FriendList, { foreignKey: "UserId" })
-      User.hasMany(models.FriendList, { foreignKey: "EctyId" })
+      User.hasMany(models.FriendList, { foreignKey: "FriendId" })
       User.hasMany(models.UserNotification, { foreignKey: "UserId" })
       User.hasMany(models.GroupMember, { foreignKey: "UserId" })
       User.hasMany(models.Itinerary, { foreignKey: "UserId" })

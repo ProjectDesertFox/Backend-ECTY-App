@@ -1,10 +1,12 @@
-const {FriendList} = require('../models')
+const {User,FriendList} = require('../models')
 class friendListController {
   static async getFriendList (req, res, next) {
+    console.log(typeof req.UserId,'user--------id');
     try {
-      let friendList = await FriendList.findAll({include: [User], where: {UserId: req.UserId}})
+      let friendList = await FriendList.findAll({include:[{model:User , as: 'User'}], where:{UserId:req.UserId}})
       res.status(200).json(friendList)
     } catch (err) {
+      console.log(err);
       next(err)
     }
   }
@@ -15,25 +17,29 @@ class friendListController {
       let addFriend = await FriendList.create({UserId, FriendId})
       res.status(201).json(addFriend)
     } catch (err) {
-      if(err.name === 'SequelizeValidationError') {
-        let validation = err.errors.map(el => el.message)
-        next({ status: 400, message: validation })
+      console.log(err, '==============');
+      if(err.name === 'SequelizeForeignKeyConstraintError') {
+        //let validation = err.errors.map(el => el.message)
+        next({ status: 404, message: 'Friend Id is not found' })
       }else{
         next(err)
       }
     }
   }
   static async deleteFriend (req, res, next) {
+    console.log(req.params.id);
     try {
       const deletedFriend = await FriendList.destroy({where: {id: req.params.id}})
       if(deletedFriend === 0){
         next({status: 404, message: `Friend with id ${req.params.id} not found`})
       }else{
+        console.log('bisa hapus');
         return res.status(200).json({
-          message: `Friend with id ${req.paramas.id} delete success`
+          message: `Friend with id ${req.params.id} delete success`
         })
       }
     } catch (err) {
+      console.log(err);
       next(err)
     }
   }

@@ -52,7 +52,7 @@ class itineraryPlacesController {
       const {name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId} = req.body
       const status = 'Active'
       let itineraryPlace = await ItineraryPlace.create({name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId, status})
-      res.status(201).json(itineraryPlace)
+      res.status(201).json({message:'Success Add Itinerary Place', itineraryPlace})
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {
         let validation = err.errors.map(el => el.message)

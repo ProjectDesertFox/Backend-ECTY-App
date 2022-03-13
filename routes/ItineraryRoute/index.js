@@ -4,7 +4,6 @@ const Itineraries = require('express').Router()
 
 console.log('router masuk');
 
-
 Itineraries.get('/', ControllerItinerary.fetchAllItinerary)
 Itineraries.post('/', ControllerItinerary.addItinerary)
 Itineraries.get('/my-list', ControllerItinerary.fetchAllItineraryMyList)
