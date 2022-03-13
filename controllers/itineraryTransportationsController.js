@@ -15,8 +15,8 @@ class itineraryTransportationController {
   }
   static async updateItineraryTransportation (req, res, next) {
     try {
-      const {transportationType, from, to, distance, estimatedtime, estimatedPrice, ItineraryId} = req.body
-      const itineraryTransportation = await itineraryTransportation.update({transportationType, from, to, distance, estimatedtime, estimatedPrice, ItineraryId}, {where: {id: +req.params.id}, returning: true, plain:true})
+      const {transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId} = req.body
+      const itineraryTransportation = await ItineraryTransportation.update({transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId}, {where: {id: +req.params.id}, returning: true, plain:true})
 
       if(itineraryTransportation[0] === 0 ){
         next({status: 404, message: `Itinerary Transportation with id ${req.params.id} not found`})
@@ -47,9 +47,9 @@ class itineraryTransportationController {
   }
   static async addItineraryTransportation (req, res, next) {
     try {
-      const {transportationType, from, to, distance, estimatedtime, estimatedPrice, ItineraryId} = req.body
+      const {transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId} = req.body
 
-      let itineraryTransportation = await ItineraryTransportation.create({transportationType, from, to, distance, estimatedtime, estimatedPrice, ItineraryId})
+      let itineraryTransportation = await ItineraryTransportation.create({transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId})
       res.status(201).json(itineraryTransportation)
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {

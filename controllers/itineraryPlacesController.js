@@ -1,5 +1,7 @@
 const {ItineraryPlace} = require('../models')
+
 class itineraryPlacesController {
+
   static async getOne (req, res, next) {
     try {
       const itineraryPlaces = await ItineraryPlace.findOne({where: {id: +req.params.id}})
@@ -14,8 +16,8 @@ class itineraryPlacesController {
   }
   static async updateItineraryPlace (req, res, next) {
     try {
-      const {name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId} = req.body
-      const itineraryPlace = await itineraryPlace.update({name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId}, {where: {id: +req.params.id}, returning: true, plain:true})
+      const {name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId} = req.body
+      const itineraryPlace = await ItineraryPlace.update({name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId}, {where: {id: +req.params.id}, returning: true, plain:true})
 
       if(itineraryPlace[0] === 0 ){
         next({status: 404, message: `Itinerary Place with id ${req.params.id} not found`})
@@ -27,6 +29,7 @@ class itineraryPlacesController {
         let validation = err.errors.map(el => el.message)
         next({ status: 400, message: validation })
       }else{
+        console.log(err)
         next(err)
       }
     }
@@ -46,9 +49,9 @@ class itineraryPlacesController {
   }
   static async addItineraryPlace (req, res, next) {
     try {
-      const {name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId} = req.body
+      const {name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId} = req.body
       const status = 'Active'
-      let itineraryPlace = await ItineraryPlace.create({name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId, status})
+      let itineraryPlace = await ItineraryPlace.create({name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId, status})
       res.status(201).json(itineraryPlace)
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {

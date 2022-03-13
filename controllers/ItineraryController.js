@@ -116,6 +116,28 @@ class ControllerItinerary {
                 next(err)
             })
     }
+
+    static fetchAllItinerary(req, res, next){
+        Itinerary.findAll()
+        .then(itineraries=>{
+            res.status(200).json(itineraries)
+        })
+        .catch(err=>{
+            console.log(err)
+            next(err)
+        })
+    }
+
+    static fetchAllItineraryMyList(req, res, next){
+        Itinerary.findAll({where: {UserId:req.UserId}})
+        .then(itineraries =>{
+            res.status(200).json(itineraries)
+        })
+        .catch(err =>{
+            console.log(err);
+            next(err)
+        })
+    }
 }
 
 module.exports = ControllerItinerary
