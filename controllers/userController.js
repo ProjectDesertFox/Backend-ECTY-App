@@ -142,4 +142,7 @@ module.exports = class userController {
             }
         })
     }
+    static updateStatus (req, res, next){
+        const {planStatus} = req.body
+    }
 }

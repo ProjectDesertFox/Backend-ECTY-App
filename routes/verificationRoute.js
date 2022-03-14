@@ -10,8 +10,12 @@ const uploadImage = require('../middlewares/image.js')
 router.post('/email', verificationController.sendEmailVerification)
 router.patch('/email-verification', verificationController.checkEmailVerification)
 router.get('/:email', verificationController.getOne)
-router.use(authentication)
-//router.post('/ktp', upload.single('ktp'), uploadImage, verificationController.sendKTPVerification)
+router.get('/ktp-approve/:userId', verificationController.verificationKTPApprove)
+router.get('/ktp-disapprove/:userId', verificationController.verificationKTPDisapprove)
+router.patch('/ktp', authentication, upload.single('ktp'), uploadImage, verificationController.sendKTPVerification)
+
+
+
 
 
 module.exports = router

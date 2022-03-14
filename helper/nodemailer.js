@@ -24,7 +24,7 @@ function sendMail(email, subject, body){
         }
     });
 }
-function receiveMail(subject, body){
+function receiveMail(subject, body, image){
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -36,11 +36,16 @@ function receiveMail(subject, body){
         from: 'desertfox.pet@gmail.com',
         to: `ectyapp@gmail.com`,
         subject: `${subject}`,
-        text: `${body}`,
-        //html: `Please press <a href=http://localhost:3000/verify/${uniqueString}> here </a> to verify your email. Thanks`
+        html: ` Name : ${body.username},
+        Image: ${image},
+        User ID: ${body.id},
+        Email : ${body.email}
+        Please press <a href=http://localhost:3000/verification/ktp-approve/${body.id}> Approve </a> to Approve verification KTP.
+
+        Please press <a href=http://localhost:3000/verification/ktp-disapprove/${body.id}> Disapprove </a> to disapprove verification KTP`
     };
 
-    transporter.receiveMail(mailOptions, function (error, info) {
+    transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error);
         } else {
