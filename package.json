@@ -28,7 +28,7 @@
   "scripts": {
     "test": "jest --detectOpenHandles --collectCoverage",
     "dev": "NODE_ENV=development && nodemon app.js",
-    "start": "node app.js"
+    "start": "node bin/server.js"
   },
   "repository": {
     "type": "git",

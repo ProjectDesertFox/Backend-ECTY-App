@@ -3,7 +3,7 @@ const { authentication } = require('../../middlewares/auth');
 
 const Itineraries = require('express').Router()
 
-console.log('router masuk');
+// console.log('router masuk');
 
 Itineraries.get('/', ControllerItinerary.fetchAllItinerary)
 Itineraries.get('/:id', ControllerItinerary.fetchOne)
