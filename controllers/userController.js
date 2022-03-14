@@ -102,7 +102,7 @@ module.exports = class userController {
             })
     }
     static getOneUser(req, res, next) {
-        const id = req.params.id
+        const id = req.UserId
         User.findByPk(id)
             .then(data => {
                 if (data === null) {

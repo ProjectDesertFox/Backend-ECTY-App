@@ -1,11 +1,12 @@
 const userController = require ('../controllers/userController')
+const { authentication } = require('../middlewares/auth')
 
 const router = require('express').Router()
 
 
 router.get('/', userController.getAllUser)
 router.patch('/', userController)
-router.get('/:id', userController.getOneUser)
+router.get('/userCurrent', userController.getOneUser)
 router.patch('/:id', userController.updateUser)
 router.delete('/:id', userController.deleteUser)
 
