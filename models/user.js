@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.UserNotification, { foreignKey: "UserId" })
       User.hasMany(models.GroupMember, { foreignKey: "UserId" })
       User.hasMany(models.Itinerary, { foreignKey: "UserId" })
+      User.hasOne(models.UserVerification, { foreignKey: "UserId" })
     }
   }
   User.init({
