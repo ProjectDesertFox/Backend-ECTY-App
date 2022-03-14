@@ -1,4 +1,4 @@
-const { Itinerary, ItineraryTransportation, ItineraryPlace, GroupChat, sequelize, User } = require('../models/index.js');
+const { Itinerary, ItineraryTransportation, ItineraryPlace, GroupChat, sequelize, User, GroupChats } = require('../models/index.js');
 
 
 class ControllerItinerary {
@@ -62,10 +62,11 @@ class ControllerItinerary {
         }
     }
     static fetchAllItinerary(req, res, next){
-        Itinerary.findAll({include:[
+        Itinerary.findAll({where:{type:'public'||'Public'}, include:[
             User,
             ItineraryPlace,
-            ItineraryTransportation
+            ItineraryTransportation,
+            GroupChats
         ]})
         .then(itineraries=>{
             res.status(200).json(itineraries)
@@ -90,7 +91,7 @@ class ControllerItinerary {
         let id = req.params.id
 
         Itinerary.findOne({
-            where: { id }
+            where: { id }, include:[ItineraryPlace,ItineraryTransportation]
         })
             .then(data => {
                 res.status(200).json({
@@ -143,28 +144,6 @@ class ControllerItinerary {
             .catch(err => {
                 next(err)
             })
-    }
-
-    static fetchAllItinerary(req, res, next){
-        Itinerary.findAll()
-        .then(itineraries=>{
-            res.status(200).json(itineraries)
-        })
-        .catch(err=>{
-            console.log(err)
-            next(err)
-        })
-    }
-
-    static fetchAllItineraryMyList(req, res, next){
-        Itinerary.findAll({where: {UserId:req.UserId}})
-        .then(itineraries =>{
-            res.status(200).json(itineraries)
-        })
-        .catch(err =>{
-            console.log(err);
-            next(err)
-        })
     }
 }
 

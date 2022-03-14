@@ -1,0 +1,138 @@
+[
+    {
+        "id": 1,
+        "provinceName": "Aceh"
+    },
+    {
+        "id": 2,
+        "provinceName": "Sumatera Utara"
+    },
+    {
+        "id": 3,
+        "provinceName": "Sumatera Selatan"
+    },
+    {
+        "id": 4,
+        "provinceName": "Sumatera Barat"
+    },
+    {
+        "id": 5,
+        "provinceName": "Bengkulu"
+    },
+    {
+        "id": 6,
+        "provinceName": "Riau"
+    },
+    {
+        "id": 7,
+        "provinceName": "Kepulauan Riau"
+    },
+    {
+        "id": 8,
+        "provinceName": "Jambi"
+    },
+    {
+        "id": 9,
+        "provinceName": "Lampung"
+    },
+    {
+        "id": 10,
+        "provinceName": "Bangka Belitung"
+    },
+    {
+        "id": 11,
+        "provinceName": "Banten"
+    },
+    {
+        "id": 12,
+        "provinceName": "DKI Jakarta"
+    },
+    {
+        "id": 13,
+        "provinceName": "Jawa Barat"
+    },
+    {
+        "id": 14,
+        "provinceName": "Jawa Tengah"
+    },
+    {
+        "id": 15,
+        "provinceName": "DI Yogyakarta"
+    },
+    {
+        "id": 16,
+        "provinceName": "Jawa Timur"
+    },
+    {
+        "id": 17,
+        "provinceName": "Bali"
+    },
+    {
+        "id": 18,
+        "provinceName": "Nusa Tenggera Timur"
+    },
+    {
+        "id": 19,
+        "provinceName": "Nusa Tenggera Barat"
+    },
+    {
+        "id": 20,
+        "provinceName": "Kalimantan Barat"
+    },
+    {
+        "id": 21,
+        "provinceName": "Kalimantan Timur"
+    },
+    {
+        "id": 22,
+        "provinceName": "Kalimantan Selatan"
+    },
+    {
+        "id": 23,
+        "provinceName": "Kalimantan Tengah"
+    },
+    {
+        "id": 24,
+        "provinceName": "Kalimantan Utara"
+    },
+    {
+        "id": 25,
+        "provinceName": "Gorontalo"
+    },
+    {
+        "id": 26,
+        "provinceName": "Sulawesi Barat"
+    },
+    {
+        "id": 27,
+        "provinceName": "Sulawesi Tengah"
+    },
+    {
+        "id": 28,
+        "provinceName": "Sulawesi Utara"
+    },
+    {
+        "id": 29,
+        "provinceName": "Sulawesi Tenggara"
+    },
+    {
+        "id": 30,
+        "provinceName": "Sulawesi Selatan"
+    },
+    {
+        "id": 31,
+        "provinceName": "Maluku Utara"
+    },
+    {
+        "id": 32,
+        "provinceName": "Maluku"
+    },
+    {
+        "id": 33,
+        "provinceName": "Papua Barat"
+    },
+    {
+        "id": 34,
+        "provinceName": "Papua"
+    }
+]
