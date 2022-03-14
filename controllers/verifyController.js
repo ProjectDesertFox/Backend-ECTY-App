@@ -20,7 +20,6 @@ module.exports = class verificationController {
 
         UserVerification.create({ UserEmail, UniqueNumberVerificationEmail })
             .then(data => {
-                //UserVerification.update({statusValidEmail:'2'}, {where:{UserEmail:data.UserEmail}})
                 res.status(201).json({
                     success: true, message: `Success Sent Verification code to ${data.UserEmail}, kindly check your email!!`, data:data
                 })
@@ -46,7 +45,6 @@ module.exports = class verificationController {
                     UniqueNumberVerificationEmail: UniqueNumberVerificationEmail
                 }
             })
-            //console.log(checkUser[0].dataValues, '=======');
             if (checkUser.length !== null) {
                 let validEmail = true
                 let updateUser = await UserVerification.update({ validEmail, statusValidEmail:'3' }, { where: { id: checkUser[0].dataValues.id } })
@@ -55,10 +53,23 @@ module.exports = class verificationController {
                 return res.status(400).json({ message: 'Fail to check Email' })
             }
         } catch (error) {
-            console.log(error,'**********************');
             next(error)
         }
-
+    }
+    static getOne(req, res, next) {
+        let UserEmail = req.params.email
+        UserVerification.findOne({
+            where: { UserEmail }
+        })
+            .then(data => {
+                res.status(201).json({
+                    itinerary: data
+                })
+            })
+            .catch(err => {
+                console.log(err);
+                next(err)
+            })
     }
 
 }

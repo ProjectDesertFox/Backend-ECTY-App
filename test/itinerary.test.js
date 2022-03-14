@@ -125,7 +125,7 @@ describe('PUT /itinerary/:id', function () {
             title : "Bali Trip Abal2",
         }
         request(app)
-            .put(`/itinerary/1`)
+            .put(`/itinerary/100`)
             .send(input)
             .set('Accept', 'application/json')
             .set({ access_token: access_token })
@@ -133,7 +133,7 @@ describe('PUT /itinerary/:id', function () {
                 console.log(response.body,'check+++++++++');
                 const { body, status } = response
                 expect(status).toBe(404)
-                expect(body).toHaveProperty("message", `Itinerary with id 1 not found`)
+                expect(body).toHaveProperty("message", `Itinerary with id 100 not found`)
                 done()
             })
             .catch(err => {
@@ -165,14 +165,14 @@ describe('DELETE /itinerary/:id', function () {
     });
     it("Delete Itinerary id not found", function (done) {
         request(app)
-            .delete("/itinerary/2")
+            .delete("/itinerary/200")
             .set("Accept", "application/json")
             .set({ access_token: access_token })
             .then((res) => {
                 //console.log(res.body, 'user delete +======');
                 const { status, body } = res;
                 expect(status).toBe(404);
-                expect(body).toHaveProperty("message", "Itinerary with id 2 not found")
+                expect(body).toHaveProperty("message", "Itinerary with id 200 not found")
                 //expect body. name ===
                 //expect(body.transportation.name === "Fortuner").toBe(true)
                 done();

@@ -15,7 +15,7 @@ class userNotificationController {
       if(userNotification[0] === 0 ){
         next({status: 404, message: `Notification with id ${req.params.id} not found`})
       }else{
-        return res.status(200).json(UserNotification)
+        return res.status(201).json({message: "update status success",UserNotification})
       }
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {
@@ -32,7 +32,7 @@ class userNotificationController {
       if (notification === 0) {
         next({ status: 404, message: `Notification with id ${req.params.id} not found` })
       } else {
-          return res.status(200).json(`Notification with id ${req.params.id} deleted`)
+          return res.status(200).json({message:`Notification with id ${req.params.id} deleted`})
       }
     } catch (err) {
       next(err)
@@ -44,7 +44,7 @@ class userNotificationController {
       const status = 'Active'
       const UserId = req.UserId
       let notification = await UserNotification.create({message, status, type, DataId, UserId})
-      res.status(201).json(notification)
+      res.status(201).json({message:"user notif created",notification})
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {
         let validation = err.errors.map(el => el.message)

@@ -15,13 +15,13 @@ class itineraryTransportationController {
   }
   static async updateItineraryTransportation (req, res, next) {
     try {
-      const {transportationType, from, to, distance, estimatedtime, estimatedPrice, ItineraryId} = req.body
-      const itineraryTransportation = await itineraryTransportation.update({transportationType, from, to, distance, estimatedtime, estimatedPrice, ItineraryId}, {where: {id: +req.params.id}, returning: true, plain:true})
+      const {transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId} = req.body
+      const itineraryTransportation = await ItineraryTransportation.update({transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId}, {where: {id: +req.params.id}, returning: true, plain:true})
 
       if(itineraryTransportation[0] === 0 ){
-        next({status: 404, message: `Itinerary Transportation with id ${req.params.id} not found`})
+        return res.status(404).json({ message: `Itinerary Transportation with id ${req.params.id} not found`})
       }else{
-        return res.status(200).json(itineraryTransportation)
+        return res.status(201).json({ message: `Itinerary Transportation with id ${req.params.id} Updated`, itineraryTransportation})
       }
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {
@@ -38,7 +38,7 @@ class itineraryTransportationController {
       if(itineraryTransportation === 0){
         next({ status: 404, message: `Itinerary Transportation with id ${req.params.id} not found` })
       }else{
-        return res.status(200).json(`Itinerary Transportation with id ${req.params.id} deleted`)
+        return res.status(200).json({message:`Itinerary Transportation with id ${req.params.id} deleted`})
       }
     } catch (err) {
       next(err)
@@ -47,9 +47,9 @@ class itineraryTransportationController {
   }
   static async addItineraryTransportation (req, res, next) {
     try {
-      const {transportationType, from, to, distance, estimatedtime, estimatedPrice, ItineraryId} = req.body
+      const {transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId} = req.body
 
-      let itineraryTransportation = await ItineraryTransportation.create({transportationType, from, to, distance, estimatedtime, estimatedPrice, ItineraryId})
+      let itineraryTransportation = await ItineraryTransportation.create({transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId})
       res.status(201).json({message: 'Success to create Itinerary Transportation', itineraryTransportation})
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {

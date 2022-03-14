@@ -1,4 +1,4 @@
-const { Itinerary, ItineraryTransportation, ItineraryPlace, GroupChat, sequelize } = require('../models/index.js')
+const { Itinerary, ItineraryTransportation, ItineraryPlace, GroupChat, sequelize, User } = require('../models/index.js');
 
 
 class ControllerItinerary {
@@ -14,6 +14,7 @@ class ControllerItinerary {
             budget: req.body.budget,
             sharingMemberSlot: req.body.sharingMemberSlot,
             type: req.body.type,
+            imageItinerary: req.body.imageItinerary,
             UserId: req.UserId,
         }
         console.log(dataItinerary);
@@ -39,6 +40,7 @@ class ControllerItinerary {
                 itineraryOrder: req.body.itineraryOrder,
                 date: req.body.datePlace,
                 status: req.body.status,
+                imagePlace: req.body.imagePlace,
                 ItineraryId: Itineraries.dataValues.id 
             })
 
@@ -60,7 +62,11 @@ class ControllerItinerary {
         }
     }
     static fetchAllItinerary(req, res, next){
-        Itinerary.findAll()
+        Itinerary.findAll({include:[
+            User,
+            ItineraryPlace,
+            ItineraryTransportation
+        ]})
         .then(itineraries=>{
             res.status(200).json(itineraries)
         })
@@ -88,7 +94,7 @@ class ControllerItinerary {
         })
             .then(data => {
                 res.status(200).json({
-                    items: data
+                    itinerary: data
                 })
             })
             .catch(err => {
@@ -98,9 +104,9 @@ class ControllerItinerary {
 
     static update(req, res, next) {
         let id = req.params.id
-        const { title, destinasion, dateStart, dateEnd, rating, budget, status } = req.body
+        const { title, destinasion, dateStart, dateEnd, rating, budget, status, imageItinerary } = req.body
         let UserId = req.id
-        Itinerary.update({ title, destinasion, dateStart, dateEnd, rating, budget, status, UserId }, { where: { id } })
+        Itinerary.update({ title, destinasion, dateStart, dateEnd, rating, budget, status, UserId, imageItinerary }, { where: { id } })
             .then(data => {
                 if (data[0] === 0) {
                     res.status(404).json({
