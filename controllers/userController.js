@@ -119,7 +119,8 @@ module.exports = class userController {
     }
     static updateUser(req, res, next) {
         const id = req.params.id
-        User.update({phoneNumber, ktp},{where:{id:id}})
+        const {phoneNumber, ktp, username} = req.body
+        User.update({phoneNumber, ktp, username},{where:{id:id}})
         .then(data => {
             if (data[0] === 0) {
                 res.status(404).json({
@@ -140,5 +141,8 @@ module.exports = class userController {
                 next(err)
             }
         })
+    }
+    static updateStatus (req, res, next){
+        const {planStatus} = req.body
     }
 }

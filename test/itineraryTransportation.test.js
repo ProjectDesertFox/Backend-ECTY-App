@@ -38,6 +38,9 @@ beforeAll((done)=>{
             type: "Sharing Public",
             sharingMemberSlot: 2,
             UserId : "1",
+            status:"Active",
+            createdAt: new Date(),
+            updatedAt: new Date()
         }])
     })
     .then(()=>{
@@ -113,10 +116,10 @@ describe('PATCH /itineraryTransportation/:id', function () {
             .set('Accept', 'application/json')
             .set({ access_token: access_token })
             .then(response => {
-                // console.log(response.body,'check+++++++++');
+                 console.log(response.body,'update+++++++berhasil');
                 const { body, status } = response
                 expect(status).toBe(201)
-                expect(body).toHaveProperty("message", `itineraryTransportation with id ${idItineraryTrans} Updated`)
+                expect(body).toHaveProperty("message", `Itinerary Transportation with id ${idItineraryTrans} Updated`)
                 done()
             })
             .catch(err => {
@@ -135,9 +138,10 @@ describe('PATCH /itineraryTransportation/:id', function () {
             .set({ access_token: access_token })
             .then(response => {
                 // console.log(response.body,'check+++++++++');
+                console.log(response.body,'update+++++++gagal');
                 const { body, status } = response
                 expect(status).toBe(404)
-                expect(body).toHaveProperty("message", `itineraryTransportation with id 1 not found`)
+                expect(body).toHaveProperty("message", `Itinerary Transportation with id 1 not found`)
                 done()
             })
             .catch(err => {
@@ -157,7 +161,7 @@ describe('DELETE /itineraryTransportation/:id', function () {
                 //console.log(res.body, 'user delete +======');
                 const { status, body } = res;
                 expect(status).toBe(200);
-                expect(body).toHaveProperty("message", `itineraryTransportation with id ${idItineraryTrans} Deleted`)
+                expect(body).toHaveProperty("message", `Itinerary Transportation with id ${idItineraryTrans} deleted`)
                 //expect body. name ===
                 //expect(body.transportation.name === "Fortuner").toBe(true)
                 done();
@@ -177,7 +181,7 @@ describe('DELETE /itineraryTransportation/:id', function () {
                 //console.log(res.body, 'user delete +======');
                 const { status, body } = res;
                 expect(status).toBe(404);
-                expect(body).toHaveProperty("message", "itineraryTransportation with id 2 not found")
+                expect(body).toHaveProperty("message", "Itinerary Transportation with id 2 not found")
                 //expect body. name ===
                 //expect(body.transportation.name === "Fortuner").toBe(true)
                 done();

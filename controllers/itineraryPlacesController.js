@@ -16,13 +16,13 @@ class itineraryPlacesController {
   }
   static async updateItineraryPlace (req, res, next) {
     try {
-      const {name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId} = req.body
-      const itineraryPlace = await ItineraryPlace.update({name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId}, {where: {id: +req.params.id}, returning: true, plain:true})
+      const {name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId, imagePlace} = req.body
+      const itineraryPlace = await ItineraryPlace.update({name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId, imagePlace}, {where: {id: +req.params.id}, returning: true, plain:true})
 
       if(itineraryPlace[0] === 0 ){
         next({status: 404, message: `Itinerary Place with id ${req.params.id} not found`})
       }else{
-        return res.status(200).json(itineraryPlace)
+        return res.status(201).json({itineraryPlace,message: `Itinerary Place with id ${req.params.id} Updated`})
       }
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {
@@ -40,7 +40,7 @@ class itineraryPlacesController {
       if(itineraryPlace === 0){
         next({ status: 404, message: `Itinerary Place with id ${req.params.id} not found` })
       }else{
-        return res.status(200).json(`Itinerary Place with id ${req.params.id} deleted`)
+        return res.status(200).json({message: `Itinerary Place with id ${req.params.id} deleted`})
       }
     } catch (err) {
       next(err)
@@ -49,9 +49,9 @@ class itineraryPlacesController {
   }
   static async addItineraryPlace (req, res, next) {
     try {
-      const {name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId} = req.body
+      const {name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId, imagePlace} = req.body
       const status = 'Active'
-      let itineraryPlace = await ItineraryPlace.create({name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId, status})
+      let itineraryPlace = await ItineraryPlace.create({name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId, status, imagePlace})
       res.status(201).json({message:'Success Add Itinerary Place', itineraryPlace})
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {

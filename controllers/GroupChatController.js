@@ -8,12 +8,13 @@ class ControllerGroupChat {
         const data = {
             name: req.body.name,
             status: req.body.status,
-            ItineraryId: req.body.ItineraryId,
+            ItineraryId: req.body.ItineraryId
         }
         console.log(data)
         GroupChat.create(data)
             .then(data => {
                 res.status(201).json({
+                    message:"Success to make Group Chat",
                     name: data.name,
                     status: data.status,
                 })

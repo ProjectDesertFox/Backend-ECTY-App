@@ -35,6 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     rating: DataTypes.STRING,
+    imagePlace: DataTypes.TEXT,
     itineraryOrder: {
       type: DataTypes.INTEGER,
       allowNull: false,

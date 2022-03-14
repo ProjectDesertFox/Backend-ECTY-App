@@ -64,6 +64,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    imageItinerary: DataTypes.TEXT,
     rating: DataTypes.STRING,
     budget: DataTypes.INTEGER,
     UserId: {
