@@ -62,12 +62,14 @@ class ControllerItinerary {
         }
     }
     static fetchAllItinerary(req, res, next){
+        // console.log('masuk')
         Itinerary.findAll({include:[
             User,
             ItineraryPlace,
             ItineraryTransportation
         ]})
         .then(itineraries=>{
+            // console.log("itineraries")
             res.status(200).json(itineraries)
         })
         .catch(err=>{
@@ -145,27 +147,27 @@ class ControllerItinerary {
             })
     }
 
-    static fetchAllItinerary(req, res, next){
-        Itinerary.findAll()
-        .then(itineraries=>{
-            res.status(200).json(itineraries)
-        })
-        .catch(err=>{
-            console.log(err)
-            next(err)
-        })
-    }
+    // static fetchAllItinerary(req, res, next){
+    //     Itinerary.findAll()
+    //     .then(itineraries=>{
+    //         res.status(200).json(itineraries)
+    //     })
+    //     .catch(err=>{
+    //         console.log(err)
+    //         next(err)
+    //     })
+    // }
 
-    static fetchAllItineraryMyList(req, res, next){
-        Itinerary.findAll({where: {UserId:req.UserId}})
-        .then(itineraries =>{
-            res.status(200).json(itineraries)
-        })
-        .catch(err =>{
-            console.log(err);
-            next(err)
-        })
-    }
+    // static fetchAllItineraryMyList(req, res, next){
+    //     Itinerary.findAll({where: {UserId:req.UserId}})
+    //     .then(itineraries =>{
+    //         res.status(200).json(itineraries)
+    //     })
+    //     .catch(err =>{
+    //         console.log(err);
+    //         next(err)
+    //     })
+    // }
 }
 
 module.exports = ControllerItinerary
