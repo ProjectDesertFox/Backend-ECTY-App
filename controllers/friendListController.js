@@ -14,10 +14,14 @@ class friendListController {
     try {
       const UserId = req.UserId
       const FriendId = req.params.ectyId
-      let addFriend = await FriendList.create({UserId, FriendId})
-      res.status(201).json(addFriend)
+      let checkFriend = await FriendList.findAll({where: { UserId, FriendId}})
+      if(checkFriend){
+        res.status.json('User has been added to friend list before')
+      }else{
+        let addFriend = await FriendList.create({UserId, FriendId})
+        res.status(201).json(addFriend)
+      }
     } catch (err) {
-      console.log(err, '==============');
       if(err.name === 'SequelizeForeignKeyConstraintError') {
         //let validation = err.errors.map(el => el.message)
         next({ status: 404, message: 'Friend Id is not found' })
@@ -33,7 +37,6 @@ class friendListController {
       if(deletedFriend === 0){
         next({status: 404, message: `Friend with id ${req.params.id} not found`})
       }else{
-        console.log('bisa hapus');
         return res.status(200).json({
           message: `Friend with id ${req.params.id} delete success`
         })
