@@ -103,7 +103,9 @@ module.exports = class userController {
     }
     static getOneUser(req, res, next) {
         const id = req.UserId
-        User.findByPk(id)
+        User.findByPk(id, {include:[
+            UserVerification
+        ]})
             .then(data => {
                 if (data === null) {
                     res.status(404).json({
