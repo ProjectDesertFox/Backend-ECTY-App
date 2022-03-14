@@ -1,4 +1,4 @@
-const { Itinerary, ItineraryTransportation, ItineraryPlace, GroupChat, sequelize, User } = require('../models/index.js');
+const { Itinerary, ItineraryTransportation, ItineraryPlace, GroupChat, sequelize, User, GroupChats } = require('../models/index.js');
 
 
 class ControllerItinerary {
@@ -62,11 +62,11 @@ class ControllerItinerary {
         }
     }
     static fetchAllItinerary(req, res, next){
-        // console.log('masuk')
-        Itinerary.findAll({include:[
+        Itinerary.findAll({where:{type:'public'||'Public'}, include:[
             User,
             ItineraryPlace,
-            ItineraryTransportation
+            ItineraryTransportation,
+            GroupChats
         ]})
         .then(itineraries=>{
             // console.log("itineraries")
@@ -92,7 +92,7 @@ class ControllerItinerary {
         let id = req.params.id
 
         Itinerary.findOne({
-            where: { id }
+            where: { id }, include:[ItineraryPlace,ItineraryTransportation]
         })
             .then(data => {
                 res.status(200).json({

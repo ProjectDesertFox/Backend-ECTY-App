@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "transportationName": "Motor",
+        "pricePerKM": 1000
+    },
+    {
+        "id": 2,
+        "transportationName": "Mobil",
+        "pricePerKM": 2000
+    },
+    {
+        "id": 3,
+        "transportationName": "Bus",
+        "pricePerKM": 500
+    },
+    {
+        "id": 4,
+        "transportationName": "Kereta",
+        "pricePerKM": 700
+    }
+]

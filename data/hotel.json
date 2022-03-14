@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "nameHotel": "Grand Aceh Hotel",
+        "description": "Luxurious rooms & suites in an elegant hotel offering a refined restaurant, an outdoor pool & a gym.",
+        "price" : "192600",
+        "rating": 4,
+        "imageHotel": "https://pix8.agoda.net/hotelImages/16209808/-1/66babd009f022fc994cb494ff86b68c0.jpg?ca=13&ce=1&s=450x450",
+        "facilities" : "Breakfast, Pool, AC, Wi-fi, Parking",
+        "address":"Jl. Dr. Mr. Mohd Hasan, Sukadamai, Kec. Lueng Bata, Kota Banda Aceh, Aceh 23127•0822-8380-1100",
+        "city": "Banda Aceh",
+        "ProvinceId" : "1"
+    },
+    {
+        "id": 2,
+        "nameHotel": "UB Caisar Hotel",
+        "description": "Down-to-earth property offering a restaurant & a terrace, plus an elegant lobby lounge.",
+        "price" : "160838",
+        "rating": 3,
+        "imageHotel": "https://lh3.googleusercontent.com/p/AF1QipOKlpgO0dgdyCkxDVe87XiBkpbx-FUqd9FLJBuD=w592-h404-n-k-rw-no-v1",
+        "facilities" : "Breakfast, Parking, AC, Wi-fi",
+        "address":"Jl. T. Nyak Arief No.17-20, Jeulingke, Kec. Syiah Kuala, Kota Banda Aceh, Aceh 24415•(0651) 7555750",
+        "city": "Banda Aceh",
+        "ProvinceId" : "1"
+    },
+    {
+        "id": 3,
+        "nameHotel": "OYO 238 Hotel Grand Darussalam Syariah",
+        "description": "Simply furnished rooms in an unpretentious property offering a restaurant & complimentary Wi-Fi.",
+        "price" : "129272",
+        "rating": 4,
+        "imageHotel": "https://lh3.googleusercontent.com/p/AF1QipMA-Ji6QorVEwZFyMruFVZkYJ4WR893ZzSmxlON=w592-h404-n-k-rw-no-v1",
+        "facilities" : "Restaurant, Parking, AC, Wi-fi",
+        "address":"Jl. Darussalam No.32A, Sei Sikambing D, Kec. Medan Petisah, Kota Medan, Sumatera Utara 20112•(021) 29707600",
+        "city": "Medan",
+        "ProvinceId" : "2"
+    },
+    {
+        "id": 4,
+        "nameHotel": "OYO 238 Hotel Grand Darussalam Syariah",
+        "description": "Simply furnished rooms in an unpretentious property offering a restaurant & complimentary Wi-Fi.",
+        "price" : "129272",
+        "rating": 4,
+        "imageHotel": "https://lh3.googleusercontent.com/p/AF1QipMA-Ji6QorVEwZFyMruFVZkYJ4WR893ZzSmxlON=w592-h404-n-k-rw-no-v1",
+        "facilities" : "Restaurant, Parking, AC, Wi-fi",
+        "address":"Jl. Darussalam No.32A, Sei Sikambing D, Kec. Medan Petisah, Kota Medan, Sumatera Utara 20112•(021) 29707600",
+        "city": "Medan",
+        "ProvinceId" : "2"
+    }
+]
