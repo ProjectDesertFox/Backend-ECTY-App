@@ -44,6 +44,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      imagePlace: {
+        type: Sequelize.TEXT
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

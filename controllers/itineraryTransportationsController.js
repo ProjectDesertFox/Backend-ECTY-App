@@ -19,9 +19,9 @@ class itineraryTransportationController {
       const itineraryTransportation = await ItineraryTransportation.update({transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId}, {where: {id: +req.params.id}, returning: true, plain:true})
 
       if(itineraryTransportation[0] === 0 ){
-        next({status: 404, message: `Itinerary Transportation with id ${req.params.id} not found`})
+        return res.status(404).json({ message: `Itinerary Transportation with id ${req.params.id} not found`})
       }else{
-        return res.status(200).json(itineraryTransportation)
+        return res.status(201).json({ message: `Itinerary Transportation with id ${req.params.id} Updated`, itineraryTransportation})
       }
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {
@@ -38,7 +38,7 @@ class itineraryTransportationController {
       if(itineraryTransportation === 0){
         next({ status: 404, message: `Itinerary Transportation with id ${req.params.id} not found` })
       }else{
-        return res.status(200).json(`Itinerary Transportation with id ${req.params.id} deleted`)
+        return res.status(200).json({message:`Itinerary Transportation with id ${req.params.id} deleted`})
       }
     } catch (err) {
       next(err)

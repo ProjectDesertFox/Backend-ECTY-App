@@ -20,7 +20,6 @@ module.exports = class verificationController {
 
         UserVerification.create({ UserEmail, UniqueNumberVerificationEmail })
             .then(data => {
-                //UserVerification.update({statusValidEmail:'2'}, {where:{UserEmail:data.UserEmail}})
                 res.status(201).json({
                     success: true, message: `Success Sent Verification code to ${data.UserEmail}, kindly check your email!!`, data:data
                 })
@@ -54,6 +53,21 @@ module.exports = class verificationController {
         } catch (error) {
             next(error)
         }
+    }
+    static getOne(req, res, next) {
+        let UserEmail = req.params.email
+        UserVerification.findOne({
+            where: { UserEmail }
+        })
+            .then(data => {
+                res.status(201).json({
+                    itinerary: data
+                })
+            })
+            .catch(err => {
+                console.log(err);
+                next(err)
+            })
     }
 
     static getOne(req, res, next) {
