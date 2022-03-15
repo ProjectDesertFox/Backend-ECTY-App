@@ -28,12 +28,12 @@ function receiveMail(subject, body, image){
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'desertfox.pet@gmail.com',
-            pass: 'desertFox08' // naturally, replace both with your real credentials or an application-specific password
+            user: 'ectyapp@gmail.com',
+            pass: 'desertfox' // naturally, replace both with your real credentials or an application-specific password
         }
     });
     const mailOptions = {
-        from: 'desertfox.pet@gmail.com',
+        from: 'Admin',
         to: `ectyapp@gmail.com`,
         subject: `${subject}`,
         html: ` Name : ${body.username},
