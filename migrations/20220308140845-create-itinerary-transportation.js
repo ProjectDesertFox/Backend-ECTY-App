@@ -20,6 +20,26 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      // from: {
+      //   type: Sequelize.STRING,
+      //   allowNull: false,
+      //   references: {
+      //     model: 'ItineraryPlaces',
+      //     key: 'id'
+      //   },
+      //   onUpdate: 'cascade',
+      //   onDelete: 'cascade'
+      // },
+      // to: {
+      //   type: Sequelize.STRING,
+      //   allowNull: false,
+      //   references: {
+      //     model: 'ItineraryPlaces',
+      //     key: 'id'
+      //   },
+      //   onUpdate: 'cascade',
+      //   onDelete: 'cascade'
+      // },
       distance: {
         type: Sequelize.STRING,
       },

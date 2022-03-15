@@ -272,6 +272,9 @@ describe('POST /login', function () {
             .catch(err => done(err))
     })
 })
+describe('PATCH /verification/ktp', function () {
+
+})
 describe('GET /users', function () {
     it("get all data user", function (done) {
         request(app)

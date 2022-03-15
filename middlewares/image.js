@@ -15,7 +15,7 @@ async function uploadImage(req, res, next) {
             next(err) 
         })
     } else {
-        if (req.file.size > 255000) {
+        if (req.file.size > 2550000) {
             next({ message: "File terlalu besar" }) //ini belum ke handle untuk tampil error, tapi data udh gak masuk
         } else {
             const form = new FormData()

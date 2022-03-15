@@ -66,7 +66,7 @@ class ControllerItinerary {
             User,
             ItineraryPlace,
             ItineraryTransportation,
-            GroupChats
+            GroupChat
         ]})
         .then(itineraries=>{
             // console.log("itineraries")

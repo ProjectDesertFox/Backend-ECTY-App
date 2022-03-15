@@ -1,0 +1,222 @@
+[
+    {
+        "id":1,
+        "destinationName":"Taman Impian Jaya Ancol",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRbM-uiZRw4-Ktjlx4hRrsCkt9Df41jRxvMw&usqp=CAU",
+        "activeTime":"06:00 - 22:00",
+        "rating":4.5,
+        "pricePerOrg":"75000",
+        "city":"Jakarta Utara",
+        "description":"Taman Impian Jaya Ancol also known as Ancol Dreamland is an integral part of Ancol Bay City, a resort destination located along Jakarta's waterfront, in Ancol, Pademangan, Indonesia. It is owned by PT. Pembangunan Jaya Ancol Tbk, a subsidiary of Pembangunan Jaya Group. Ancol Dreamland opened in 1966 and is currently the largest integrated tourism area in South East Asia, boasting an international championship golf course, a theme park, hotels and other recreational facilities. ",
+        "ProvinceId": 12
+    },
+    {
+        "id":2,
+        "destinationName":"Taman Mini indonesia Indah",
+        "image":"https://salsawisata.b-cdn.net/wp-content/uploads/2021/07/Taman-Mini-Indonesia-Indah.jpg.webp",
+        "activeTime":"06:00 - 22:00",
+        "rating":4.5,
+        "pricePerOrg":"20000",
+        "city":"Jakarta Timur",
+        "description":"Taman Mini Indonesia Indah is a culture-based recreational area located in East Jakarta, Indonesia. Since July 2021, it is operated by the Government of Indonesia through the PT Taman Wisata Candi Borobudur, Prambanan, dan Ratu Boko; it was formerly operated by Yayasan Harapan Kita, a foundation established by Siti Hartinah, the first lady during most of the New Order and wife of Suharto, and still run by Suharto's descendants since his death. It has an area of about 100 hectares.",
+        "ProvinceId": 12
+    },
+    {
+        "id": 3,
+        "destinationName":"Monumen Nasional",
+        "image":"https://salsawisata.b-cdn.net/wp-content/uploads/2021/07/Monumen-Nasional.jpg.webp",
+        "activeTime":"08:00 - 22.00",
+        "rating": 4.6,
+        "pricePerOrg":"20000",
+        "city":"Jakarta Pusat",
+        "description":"The National Monument is a 132 m obelisk in the centre of Merdeka Square, Central Jakarta, symbolizing the fight for Indonesia. It is the national monument of the Republic of Indonesia, built to commemorate the struggle for Indonesian independence. Construction began in 1961 under the direction of President Sukarno. Monas was opened to the public in 1975. It is topped by a flame covered with gold foil. The monument and the museum are open daily from 08.00 until 16.00 Western Indonesia Time throughout the week except for the Mondays when the monument is closed. Since April 2016, the monument also opens during night time, from 19.00 until 22.00 on Tuesday to Friday, and from 19.00 until 00.00 on Saturday and Sunday.",
+        "ProvinceId": 12
+    },
+    {
+        "id": 4,
+        "destinationName":"Kawah Putih",
+        "image":"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTJMp6yumxD8X3AsFnlUNWSc0HDkQca6CeAjaXKqufhGXJ5_IXGZdVyw_vhAgA_WmkdT4bh9h4VJRVwRzwnI_Jexg",
+        "activeTime":"08:00 - 17:00",
+        "rating": 4.5,
+        "pricePerOrg":"30000",
+        "city":"Bandung",
+        "description":"Kawah Putih is a crater lake and tourist spot in a volcanic crater about 50 kilometres south of Bandung in West Java in Indonesia. Kawah Putih lake is one of the two craters which make up Mount Patuha, an andesitic stratovolcano. Mount Patuha is one of numerous volcanoes in Java. Kawah Putih crater lake itself represents a relatively stable volcanic system with no records of significant activity since around 1600. The Kawah Putih site was opened to visitors in 1987. The lake is 2,430 metres above sea level so the local climate is often quite chilly.",
+        "ProvinceId": 13
+    },
+    {
+        "id": 5,
+        "destinationName":"Taman Safari Indonesia Bogor",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_se6ZZSfhaINPRKS0hpJvDorSt7x7iYA5LOzOo1lSHV98Phdiy09scX2-njw-5T2dwjLM7bfq703gdQ-v-wiesQ",
+        "activeTime":"09:00 - 17:00",
+        "rating":4.4,
+        "pricePerOrg":"200000",
+        "city":"Bogor",
+        "description":"Taman Safari Indonesia or simply Taman Safari are animal theme parks in Cisarua, Prigen, and Bali. Being part of the same organization, they are known as Taman Safari I, II and III. The most popular is Taman Safari I.",
+        "ProvinceId": 13
+    },
+    {
+        "id": 6,
+        "destinationName":"Candi Borobudur",
+        "image":"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTxolyLWEPGOb8vkJdlENQtSjFsXX2KPn2m3j-TMeratZ9A--G4EQDcmV8Vfelp4bqE0xMUV5Oj9aDrLbKQpvtHuw",
+        "activeTime":"07:30 - 16:00",
+        "rating": 4.7,
+        "pricePerOrg":"50000",
+        "city":"Magelang",
+        "description":"Borobudur, also transcribed Barabudur is a 7th-century Mahayana Buddhist temple in Magelang Regency, not far from the town of Muntilan, in Central Java, Indonesia. It is the world's largest Buddhist temple. The temple consists of nine stacked platforms, six square and three circular, topped by a central dome. It is decorated with 2,672 relief panels and 504 Buddha statues. The central dome is surrounded by 72 Buddha statues, each seated inside a perforated stupa. Built in the 9th century during the reign of the Sailendra Dynasty, the temple design follows Javanese Buddhist architecture, which blends the Indonesian indigenous tradition of ancestor worship and the Buddhist concept of attaining Nirvana. The temple demonstrates the influences of Gupta art that reflects India's influence on the region, yet there are enough indigenous scenes and elements incorporated to make Borobudur uniquely Indonesian.",
+        "ProvinceId": 14
+    },
+    {
+        "id": 7,
+        "destinationName":"Lawang Sewu",
+        "image":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTqYQjBmwUa6dL8W58j9klDcW4QQjtij7GALsMdPB4p0A5PBgybEdn3C-ixrd4cGvquzyQyiHL5LpvVLVDyxEyZ8Q",
+        "activeTime":"07:00 - 21:00",
+        "rating": 4.6,
+        "pricePerOrg":"20000",
+        "city":"Semarang",
+        "description":"Lawang Sewu is a former office building in Semarang, Central Java, Indonesia. It was a head office of the Dutch East Indies Railway Co. and is owned by the national railway company Kereta Api Indonesia. Its predecessor, Djawatan Kereta Api, was seized every rail transport infrastructures and offices from Dutch occupation. Today the building is used as a museum and heritage railway gallery, currently operated by Heritage Unit of KAI and its subsidiary KAI Wisata.",
+        "ProvinceId": 14
+    },
+    {
+        "id": 8,
+        "destinationName":"Taman Sari",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg-hHWUYG4idx0dZl24iNMP6CFSQeE_lb4rr_GaK_Tzk0GYLk78fch9pzEaFHp08N5B3Sn4q78Tch88Ec12KLjkA",
+        "activeTime":"09:00 - 15:00",
+        "rating": 4.6,
+        "pricePerOrg":"5000",
+        "city":"Yogyakarta",
+        "description":"Taman Sari Water Castle, also known as Taman Sari, is the site of a former royal garden of the Sultanate of Yogyakarta. It is located about 2 km south within the grounds of the Kraton, Yogyakarta, Indonesia. Built in the mid-18th century, the Taman Sari had multiple functions, such as a resting area, a workshop, a meditation area, a defense area, and a hiding place. Taman Sari consisted of four distinct areas: a large artificial lake with islands and pavilions located in the west, a bathing complex in the centre, a complex of pavilions and pools in the south, and a smaller lake in the east. Today only the central bathing complex is well preserved, while the other areas have been largely occupied by the Kampung Taman settlement. Since 2017, the Historical City Centre of Yogyakarta including Taman Sari has been listed as a tentative World Heritage Site. ",
+        "ProvinceId": 15
+    },
+    {
+        "id":9,
+        "destinationName":"Fort Vredeburg Museum",
+        "image":"https://kebudayaan.jogjakota.go.id/assets/instansi/kebudayaan/gallery/page_20210729_061443.png",
+        "activeTime":"08:00 - 15:00",
+        "rating":4.6,
+        "pricePerOrg":"3000",
+        "city":"Yogyakarta",
+        "description":"Fort Vredeburg Museum was a former colonial fortress located in the city of Yogyakarta. The military complex has been converted into a museum of the Indonesian independence struggle which was opened in 1992. It is located in front of Gedung Agung and near the Kraton Yogyakarta.",
+        "ProvinceId": 15
+    },
+    {
+        "id": 10,
+        "destinationName":"Kawah Ijen",
+        "image":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTKY8oDgBgBKn6LBC0FJM6ZNyewAUoTDstbjMlcfyWj3GoOqz80cQ_lVXhitpUpxfo0X52eWgNhr7Fs_m86FdOgCA",
+        "activeTime":"02:00 - 05:00",
+        "rating": 4.7,
+        "pricePerOrg":"50000",
+        "city":"Banyuwangi",
+        "description":"The Ijen volcano complex is a group of composite volcanoes located on the border between Banyuwangi Regency and Bondowoso Regency of East Java, Indonesia. It is known for its blue fire, acidic crater lake, and labour-intensive sulfur mining. It is inside an eponymous larger caldera Ijen, which is about 20 kilometres wide. The Gunung Merapi stratovolcano is the highest point of that complex. The name Gunung Merapi means 'mountain of fire' in the Indonesian language; Mount Merapi in central Java and Marapi in Sumatra have the same etymology. West of Gunung Merapi is the Ijen volcano, which has a one-kilometre-wide turquoise-coloured acidic crater lake. The lake is the site of a labour-intensive sulfur mining operation, in which sulfur-laden baskets are carried by hand from the crater floor. The work is paid well considering the cost of living in the area, but is very onerous. Workers earn around US$13 per day and, once out of the crater, still need to carry their loads of sulfur chunks about three kilometers to the nearby Paltuding Valley to get paid. Many other post-caldera cones and craters are located within the caldera or along its rim.",
+        "ProvinceId": 16
+    },
+    {
+        "id":11,
+        "destinationName":"Gunung Bromo",
+        "image":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ8CwXZLpPL77CyUfLefVstYh37fmek7uBxFdCoDrwST3Re8VysOj5V1ymzs2uaIhdQvmWXhB7pkDEKC4qxRs5g5g",
+        "activeTime":"24 Hours",
+        "rating": 4.8,
+        "pricePerOrg":"34000",
+        "city":"Malang",
+        "description":"Bromo Tengger Semeru National Park, known locally as Taman Nasional Bromo Tengger Semeru is a national park located in East Java, Indonesia, to the east of Malang and Lumajang, to the south of Pasuruan and Probolinggo, and to the southeast of Surabaya, the capital of East Java. It is the only conservation area in Indonesia that has a sand sea, the Tengger Sand Sea, across which is the caldera of an ancient volcano from which four new volcanic cones have emerged. This unique feature covers a total area of 5,250 hectares at an altitude of about 2,100 meters. The massif also contains the highest mountain in Java, Mount Semeru, four lakes and 50 rivers. It is named after the Tengger tribe. The explosion of the volcano that created the caldera, happened ca. 45.000 years ago, in an event similar to the Krakatau eruption. The Tengger Sand Sea has been protected since 1919. The Bromo Tengger Semeru National Park was declared a national park in 1982.",
+        "ProvinceId": 16
+    },
+    {
+        "id":12,
+        "destinationName":"Pura Uluwatu",
+        "image":"https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSHvnNb_vuqQfA8zOOM7y4FEN_QbmSJV1NIKvViUq7Uc1DSa9Acgw--z_GqGx7y18rIq1j3P1bIsFyRYjld4ov6Pg",
+        "activeTime":"07:00 - 19:00",
+        "rating":4.6,
+        "pricePerOrg":"30000",
+        "city":"Badung",
+        "description":"Uluwatu Temple is a Balinese Hindu sea temple located in Uluwatu. The temple is regarded as one of the sad kahyangan and is dedicated to Sang Hyang Widhi Wasa in his manifestation as Rudra.",
+        "ProvinceId": 17
+    },
+    {
+        "id":13,
+        "destinationName":"Pantai Kuta",
+        "image":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUx3xdsKinPxMmhrB_ZQXl48Su5nwR8uSPk46-Y8lRAiyQYdkOwFfb1f4KZsOfIAsk90hQMsaTdN6xH7MD_AqqJw",
+        "activeTime":"24 Hours",
+        "rating": 4.5,
+        "pricePerOrg":"15000",
+        "city":"Badung",
+        "description":"Vibrant locale for sunsets & surfing",
+        "ProvinceId": 17
+    },
+    {
+        "id":14,
+        "destinationName":"Pantai Sanur",
+        "image":"https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSe-3lbBluoi1irMccwVcjYGwBnsDkuIib5kA372LK-pPPxnU00xmVpWkIonDbPMzxPDhgegBk2a3fhUTnsgRNzbQ",
+        "activeTime":"24 Hours",
+        "rating": 4.5,
+        "pricePerOrg":"5000",
+        "city":"Denpasar",
+        "description":"Sanur is a coastal stretch of beach east of Denpasar in southeast Bali, which has grown into a little town in its own right. A 5.1 km area of Sanur's coastline, from Matahari Terbit Beach to Mertasari Beach, was reclaimed in 2008.",
+        "ProvinceId": 17
+    },
+    {
+        "id":15,
+        "destinationName":"Pura Besar Besakih",
+        "image":"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRguwG4ol7-1p8tGIv5jm-XQRbqh3nELLYUptCIQG9k7JvlNU4Dv5aLjoU5sQkviKBl32jFdZs-wOi9aoftFBKQnw",
+        "activeTime":"08:00 - 18:00",
+        "rating":4.5,
+        "pricePerOrg":"30000",
+        "city":"Denpasar",
+        "description":"Besakih Temple is a pura complex in the village of Besakih on the slopes of Mount Agung in eastern Bali, Indonesia. It is the most important, the largest and holiest temple of Balinese Hinduism, and one of a series of Balinese temples. Perched nearly 1000 meters up the side of Gunung Agung, it is an extensive complex of 23 separate but related temples with the largest and most important being Pura Penataran Agung. The temple is built on six levels, terraced up the slope. The entrance is marked by a candi bentar, and beyond it the Kori Agung is the gateway to the second courtyard.",
+        "ProvinceId": 17
+    },
+    {
+        "id":16,
+        "destinationName":"Taman Nasional Komodo",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeFSqRt2Ftoq4LmGX8l_sbC-lRy7N-v48N6WvkDkki3pOZu2idVX8e-SLK10lH8cKCX7K732KWV6qVC0tnEJT_ZQ",
+        "activeTime":"07:00 - 17:00",
+        "rating": 4.7,
+        "pricePerOrg":"20000",
+        "city":"Mangarai",
+        "description":"Komodo National Park is a national park in Indonesia located within the Lesser Sunda Islands in the border region between the provinces of East Nusa Tenggara and West Nusa Tenggara. The park includes the three larger islands Komodo, Padar and Rinca, and 26 smaller ones, with a total area of 1,733 km². The national park was founded in 1980 to protect the Komodo dragon, the world's largest lizard. Later it was dedicated to protecting other species, including marine species. In 1991 the national park was declared a UNESCO World Heritage Site. Komodo National Park has been selected as one of the New7Wonders of Nature. The waters surrounding Komodo island contain rich marine biodiversity. Komodo islands is also a part of the Coral Triangle, which contains some of the richest marine biodiversity on Earth.",
+        "ProvinceId": 18
+    },
+    {
+        "id":17,
+        "destinationName":"Labuan Bajo",
+        "image":"https://www.floresa.co/wp-content/uploads/2015/09/Labuan-Bajo.jpg",
+        "activeTime":"08:00 - 22.00",
+        "rating":4.0,
+        "pricePerOrg":"100000",
+        "city":"Mangarai Barat",
+        "description":"Labuan Bajo is a fishing town located at the western end of the large island of Flores in the Nusa Tenggara region of east Indonesia. It is the capital of the West Manggarai Regency (Kabupaten Manggarai Barat), one of the eight regencies which are the major administrative divisions of Flores.",
+        "ProvinceId": 18
+    },
+    {
+        "id":18,
+        "destinationName":"Gili Terawangan",
+        "image":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTgGeDKBFo9fQdZXRNMAKFkayogar1cBQwa1RZSmiiM_2xJw--sUIWOOYxxmuxZCdubzNnclKrgNEK67AyCkHc5iQ",
+        "activeTime":"24 Hours",
+        "rating": 4.6,
+        "pricePerOrg":"250000",
+        "city":"Lombok Utara",
+        "description":"Small island with hotels & a WWII tunnel",
+        "ProvinceId": 19
+    },
+    {
+        "id":19,
+        "destinationName":"Gunung Rinjani",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOsDy2rgpcreS0qdL8EC648CUBEa3eP1-iXv3XcwT5W9k6ZsY_wZO62k8IYa0AG9WoqM-r16qS_dYxSrcTwYqvLA",
+        "activeTime":"24 Hours",
+        "rating":4.5,
+        "pricePerOrg":"150000",
+        "city":"Lombok Timur",
+        "description":"Mount Rinjani is an active volcano in Indonesia on the island of Lombok. Administratively the mountain is in the Regency of North Lombok, West Nusa Tenggara. It rises to 3,726 metres, making it the second highest volcano in Indonesia. It is also the highest point in Indonesian province of West Nusa Tenggara Adjacent to the volcano is a 6-by-8.5-kilometre caldera, which is filled partially by the crater lake known as Segara Anak or Anak Laut, due to the color of its water, as blue as the sea. This lake is approximately 2,000 metres above sea level and estimated to be about 200 metres deep; the caldera also contains hot springs. Sasak tribe and Hindu people assume the lake and the mount are sacred and some religious activities are occasionally done in the two areas. UNESCO has made Mount Rinjani Caldera a part of the Global Geoparks Network in April 2018.",
+        "ProvinceId": 19
+    },
+    {
+        "id":20,
+        "destinationName":"Pantai Pink",
+        "image":"https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQWgc1sIy5eaDxmxpNoEjw1_JbZScBsXSCKbfWOY-lSXZT8R1koXOE5rqEudvOKMExsVrX_LlH9J8T7NgA7srfRIw",
+        "activeTime":"08:00 - 17:00",
+        "rating": 4.2,
+        "pricePerOrg":"10000",
+        "city":"Lombok Timur",
+        "description":"Picturesque beach known for pink sand",
+        "ProvinceId": 19
+    }
+]
