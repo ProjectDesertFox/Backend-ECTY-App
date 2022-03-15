@@ -40,14 +40,14 @@ function receiveMail(subject, body, image){
         Image: ${image},
         User ID: ${body.id},
         Email : ${body.email}
-        Please press <a href=http://localhost:3000/verification/ktp-approve/${body.id}> Approve </a> to Approve verification KTP.
+        Please press <a href=https://ecty-backend.herokuapp.com/verification/ktp-approve/${body.id}> Approve </a> to Approve verification KTP.
 
-        Please press <a href=http://localhost:3000/verification/ktp-disapprove/${body.id}> Disapprove </a> to disapprove verification KTP`
+        Please press <a href=https://ecty-backend.herokuapp.com/verification/ktp-disapprove/${body.id}> Disapprove </a> to disapprove verification KTP`
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            console.log(error);
+            console.log(error,'error receive mail +++++++++++++++');
         } else {
             console.log('Email sent: ' + info.response);
         }
