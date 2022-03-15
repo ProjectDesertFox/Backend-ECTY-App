@@ -25,13 +25,14 @@ class ControllerItinerary {
             const Itineraries = await Itinerary.create(dataItinerary)
             // console.log(Itineraries.dataValues.id, '+++++++++++++++++++++++=')
 
-
-            const chat = await GroupChat.create({
-                name: req.body.nameGroup,
-                status: req.body.status,
-                ItineraryId: Itineraries.dataValues.id,
-            })
-
+            if(Itineraries.type !== 'Private' || 'private'){
+                const chat = await GroupChat.create({
+                    name: req.body.nameGroup,
+                    status: req.body.status,
+                    ItineraryId: Itineraries.dataValues.id,
+                })
+            }
+            
             const place = await ItineraryPlace.create({
                 name: req.body.namePlace,
                 description: req.body.descriptionPlace,

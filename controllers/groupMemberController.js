@@ -2,9 +2,9 @@ const {GroupMember, User} = require('../models')
 class groupMemberController {
   static async addGroupMember (req, res, next){
     try {
-      let groupChatId = req.params.groupChatId
+      let GroupChatId = req.params.groupChatId
       let UserId = req.UserId
-      let groupMember = await GroupMember.create({groupChatId, UserId})
+      let groupMember = await GroupMember.create({GroupChatId, UserId})
       res.status(201).json(groupMember)
     } catch (err) {
       if(err.name === 'SequelizeValidationError') {
