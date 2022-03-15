@@ -93,7 +93,7 @@ class ControllerItinerary {
 
         Itinerary.findOne({
             where: { id }, include:[ItineraryPlace,ItineraryTransportation]
-        })
+            })
             .then(data => {
                 res.status(200).json({
                     itinerary: data
