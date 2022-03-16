@@ -67,7 +67,7 @@ describe('POST /friendList/:friendId', function () {
                 done(err)
             })
     })
-    it('Add Friend Double', function (done) {
+    it('Add Friend already exist', function (done) {
         // let input = {
         //     username: "fifit",
         //     email: "fifit.mocap@gmail.com",
@@ -133,46 +133,46 @@ describe('GET /friendList', function () {
             );
     });
 })
-describe('DELETE /friendList/:id', function () {
-    it("Delete Friend List", function (done) {
-        console.log(idFriendList,'id+++++++++');
-        request(app)
-            .delete(`/friendList/${idFriendList}`)
-            .set("Accept", "application/json")
-            .set({ access_token: access_token })
-            .then((res) => {
-                console.log(res.body, 'user delete +======');
-                const { status, body } = res;
-                expect(status).toBe(200);
-                expect(body).toHaveProperty("message", `Friend with id ${idFriendList} delete success`)
-                //expect body. name ===
-                //expect(body.transportation.name === "Fortuner").toBe(true)
-                done();
-            })
-            .catch((err) => {
-                console.log(err,'delete');
-                done(err)
-            }
-            );
-    });
-    it("Delete User id not found", function (done) {
-        request(app)
-            .delete("/friendList/200")
-            .set("Accept", "application/json")
-            .set({ access_token: access_token })
-            .then((res) => {
-                console.log(res.body, 'user delete +======');
-                const { status, body } = res;
-                expect(status).toBe(404);
-                expect(body).toHaveProperty("message", "Friend with id 200 not found")
-                //expect body. name ===
-                //expect(body.transportation.name === "Fortuner").toBe(true)
-                done();
-            })
-            .catch((err) => {
-                //console.log(err);
-                done(err)
-            }
-            );
-    });
-})
+// describe('DELETE /friendList/:id', function () {
+//     it("Delete Friend List", function (done) {
+//         console.log(idFriendList,'id+++++++++');
+//         request(app)
+//             .delete(`/friendList/${idFriendList}`)
+//             .set("Accept", "application/json")
+//             .set({ access_token: access_token })
+//             .then((res) => {
+//                 console.log(res.body, 'user delete +======');
+//                 const { status, body } = res;
+//                 expect(status).toBe(200);
+//                 expect(body).toHaveProperty("message", `Friend with id ${idFriendList} delete success`)
+//                 //expect body. name ===
+//                 //expect(body.transportation.name === "Fortuner").toBe(true)
+//                 done();
+//             })
+//             .catch((err) => {
+//                 console.log(err,'delete');
+//                 done(err)
+//             }
+//             );
+//     });
+//     it("Delete User id not found", function (done) {
+//         request(app)
+//             .delete("/friendList/200")
+//             .set("Accept", "application/json")
+//             .set({ access_token: access_token })
+//             .then((res) => {
+//                 console.log(res.body, 'user delete +======');
+//                 const { status, body } = res;
+//                 expect(status).toBe(404);
+//                 expect(body).toHaveProperty("message", "Friend with id 200 not found")
+//                 //expect body. name ===
+//                 //expect(body.transportation.name === "Fortuner").toBe(true)
+//                 done();
+//             })
+//             .catch((err) => {
+//                 //console.log(err);
+//                 done(err)
+//             }
+//             );
+//     });
+// })

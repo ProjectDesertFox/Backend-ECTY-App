@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.75% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>24/29</span>
+                <span class='fraction'>22/33</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.75% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>24/29</span>
+                <span class='fraction'>22/33</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -122,20 +122,12 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -151,11 +143,15 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,13 +164,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,20 +181,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const { User, FriendList } = require('../models')
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const { User, FriendList, sequelize} = require('../models')
 var { Op } = require('sequelize');
 &nbsp;
 class friendListController {
   static async getFriendList(req, res, next) {
     console.log(typeof req.UserId, 'user--------id');
-    // let ectyId = req.query.EctyId
-    // let where = {}
-&nbsp;
-    // if(ectyId){
-    //     where.ectyId = {[Op.eq] : ectyId}
-    // }
     try {
-      let friendList = await FriendList.findAll({ include: [{ model: User, as: 'User' }], where: { UserId: req.UserId } })
+      let friendList = await FriendList.findAll({ include: [{ model: User, as: 'Friend' }], where: { UserId: req.UserId } })
       res.status(200).json(friendList)
     } catch (err) {
 <span class="cstat-no" title="statement not covered" >      console.log(err);</span>
@@ -206,6 +196,7 @@ class friendListController {
     }
   }
   static async addFriend(req, res, next) {
+    const t = await sequelize.transaction()
     try {
       const UserId = req.UserId
       const FriendId = +req.params.friendId
@@ -213,10 +204,13 @@ class friendListController {
       console.log(checkFriend, 'checkFriend=================');
       if (!checkFriend.length &gt; 0) {
         //console.log(checkFriend, 'checkFriend=================if');
-        let addFriend = await FriendList.create({ UserId, FriendId })
-        return res.status(201).json(addFriend)
+        let addFriend = await FriendList.create({ UserId, FriendId },{transaction:t})
+        let addBack = await FriendList.create({UserId:addFriend.FriendId, FriendId:addFriend.UserId},{transaction:t})
+        await t.commit()
+        return res.status(201).json({addFriend, addBack})
       } else {
         //console.log(checkFriend, 'checkFriend=================else');
+        await t.rollback()
         return res.status(400).json('User has been added to friend list before')
       }
     } catch (err) {
@@ -228,14 +222,14 @@ class friendListController {
       }
     }
   }
-  static async deleteFriend(req, res, next) {
-    console.log(req.params.id);
-    try {
-      const deletedFriend = await FriendList.destroy({ where: { id: +req.params.id } })
-      if (deletedFriend === 0) {
-        next({ status: 404, message: `Friend with id ${req.params.id} not found` })
+<span class="fstat-no" title="function not covered" >  st</span>atic async deleteFriend(req, res, next) {
+<span class="cstat-no" title="statement not covered" >    console.log(req.params.id);</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const deletedFriend = <span class="cstat-no" title="statement not covered" >await FriendList.destroy({ where: { id: +req.params.id } })</span>
+<span class="cstat-no" title="statement not covered" >      if (deletedFriend === 0) {</span>
+<span class="cstat-no" title="statement not covered" >        next({ status: 404, message: `Friend with id ${req.params.id} not found` })</span>
       } else {
-        return res.status(200).json({
+<span class="cstat-no" title="statement not covered" >        return res.status(200).json({</span>
           message: `Friend with id ${req.params.id} delete success`
         })
       }
@@ -253,7 +247,7 @@ module.exports = friendListController</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Mar 16 2022 21:09:33 GMT+0800 (Central Indonesia Time)
+                at Thu Mar 17 2022 00:03:35 GMT+0800 (Central Indonesia Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

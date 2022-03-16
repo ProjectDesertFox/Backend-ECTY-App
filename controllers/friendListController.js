@@ -1,11 +1,11 @@
-const { User, FriendList } = require('../models')
+const { User, FriendList, sequelize} = require('../models')
 var { Op } = require('sequelize');
 
 class friendListController {
   static async getFriendList(req, res, next) {
     console.log(typeof req.UserId, 'user--------id');
     try {
-      let friendList = await FriendList.findAll({ include: [{ model: User, as: 'User' }], where: { UserId: req.UserId } })
+      let friendList = await FriendList.findAll({ include: [{ model: User, as: 'Friend' }], where: { UserId: req.UserId } })
       res.status(200).json(friendList)
     } catch (err) {
       console.log(err);
@@ -13,6 +13,7 @@ class friendListController {
     }
   }
   static async addFriend(req, res, next) {
+    const t = await sequelize.transaction()
     try {
       const UserId = req.UserId
       const FriendId = +req.params.friendId
@@ -20,10 +21,13 @@ class friendListController {
       console.log(checkFriend, 'checkFriend=================');
       if (!checkFriend.length > 0) {
         //console.log(checkFriend, 'checkFriend=================if');
-        let addFriend = await FriendList.create({ UserId, FriendId })
-        return res.status(201).json(addFriend)
+        let addFriend = await FriendList.create({ UserId, FriendId },{transaction:t})
+        let addBack = await FriendList.create({UserId:addFriend.FriendId, FriendId:addFriend.UserId},{transaction:t})
+        await t.commit()
+        return res.status(201).json({addFriend, addBack})
       } else {
         //console.log(checkFriend, 'checkFriend=================else');
+        await t.rollback()
         return res.status(400).json('User has been added to friend list before')
       }
     } catch (err) {

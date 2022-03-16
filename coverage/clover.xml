@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1647436173839" clover="3.2.0">
-  <project timestamp="1647436173839" name="All files">
-    <metrics statements="607" coveredstatements="262" conditionals="105" coveredconditionals="17" methods="128" coveredmethods="30" elements="840" coveredelements="309" complexity="0" loc="607" ncloc="607" packages="8" files="36" classes="36"/>
+<coverage generated="1647446615417" clover="3.2.0">
+  <project timestamp="1647446615417" name="All files">
+    <metrics statements="611" coveredstatements="260" conditionals="105" coveredconditionals="15" methods="128" coveredmethods="29" elements="844" coveredelements="304" complexity="0" loc="611" ncloc="611" packages="8" files="36" classes="36"/>
     <package name="Backend-ETCY-App">
       <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
       <file name="app.js" path="D:\Hacktive8\Phase3\ProjectETCY\Backend-ETCY-App\app.js">
@@ -21,7 +21,7 @@
       </file>
     </package>
     <package name="Backend-ETCY-App.controllers">
-      <metrics statements="354" coveredstatements="43" conditionals="78" coveredconditionals="5" methods="91" coveredmethods="3"/>
+      <metrics statements="358" coveredstatements="41" conditionals="78" coveredconditionals="3" methods="91" coveredmethods="2"/>
       <file name="GroupChatController.js" path="D:\Hacktive8\Phase3\ProjectETCY\Backend-ETCY-App\controllers\GroupChatController.js">
         <metrics statements="25" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="12" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -93,36 +93,40 @@
         <line num="174" count="1" type="stmt"/>
       </file>
       <file name="friendListController.js" path="D:\Hacktive8\Phase3\ProjectETCY\Backend-ETCY-App\controllers\friendListController.js">
-        <metrics statements="29" coveredstatements="24" conditionals="6" coveredconditionals="5" methods="3" coveredmethods="3"/>
+        <metrics statements="33" coveredstatements="22" conditionals="6" coveredconditionals="3" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
-        <line num="25" count="3" type="stmt"/>
-        <line num="26" count="3" type="stmt"/>
-        <line num="27" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="29" count="2" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="22" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="36" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
-        <line num="48" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="34" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
       </file>
       <file name="groupMemberController.js" path="D:\Hacktive8\Phase3\ProjectETCY\Backend-ETCY-App\controllers\groupMemberController.js">
         <metrics statements="21" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
@@ -440,24 +444,24 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="6" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="6" count="4" type="cond" truecount="1" falsecount="1"/>
         <line num="7" count="0" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="15" count="6" type="cond" truecount="1" falsecount="1"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="17" count="6" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="15" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
       </file>
       <file name="errHandler.js" path="D:\Hacktive8\Phase3\ProjectETCY\Backend-ETCY-App\middlewares\errHandler.js">
         <metrics statements="6" coveredstatements="5" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="3" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="6" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="7" count="0" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
       </file>
       <file name="image.js" path="D:\Hacktive8\Phase3\ProjectETCY\Backend-ETCY-App\middlewares\image.js">
