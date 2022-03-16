@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken')
-const { User, sequelize, UserVerification } = require('../models')
+const { User, sequelize, UserVerification, FriendList } = require('../models')
 const { decrypt } = require('../helper/bycrypt')
 
-async function randomEctyId(){
+async function randomEctyId() {
     try {
         const len = 8
         let randomNumber = ''
@@ -52,9 +52,9 @@ module.exports = class userController {
         //const t = await sequelize.transaction()
         try {
             const user = await User.create({ username, email, password, planStatus, EctyId })
-            const userVerify = await UserVerification.update({UserId:user.id, statusValidEmail:'done'},{where:{UserEmail:user.email}})
+            const userVerify = await UserVerification.update({ UserId: user.id, statusValidEmail: 'done' }, { where: { UserEmail: user.email } })
             //await t.commit()
-            res.status(201).json({message:'Register Success',user, userVerify})
+            res.status(201).json({ message: 'Register Success', user, userVerify })
         } catch (error) {
             //await t.rollback()
             if (error.name === 'SequelizeValidationError') {
@@ -67,7 +67,7 @@ module.exports = class userController {
                 next(error)
             }
         }
-        
+
     }
 
     static deleteUser(req, res, next) {
@@ -103,9 +103,26 @@ module.exports = class userController {
     }
     static getOneUser(req, res, next) {
         const id = req.UserId
-        User.findByPk(id, {include:[
-            UserVerification
-        ]})
+        User.findByPk(id, {
+            include: [
+                UserVerification,
+                FriendList
+            ]
+        })
+            .then(data => {
+                res.status(200).json(data)
+            })
+            .catch(err => {
+                console.log(err);
+                next(err)
+            })
+    } static fetchOneUser(req, res, next) {
+        const id = req.params.id
+        User.findByPk(id, {
+            include: [
+                UserVerification
+            ]
+        })
             .then(data => {
                 if (data === null) {
                     res.status(404).json({
@@ -122,30 +139,41 @@ module.exports = class userController {
     }
     static updateUser(req, res, next) {
         const id = req.params.id
-        const {phoneNumber, ktp, username} = req.body
-        User.update({phoneNumber, ktp, username},{where:{id:id}})
-        .then(data => {
-            if (data[0] === 0) {
-                res.status(404).json({
-                    message: `User with id ${id} not found`
-                })
-            } else {
-                res.status(201).json({
-                    message: `User with id ${id} Updated`
-                })
-            }
-        })
-        .catch(err => {
-            if (err.name === 'SequelizeValidationError') {
-                res.status(400).json({
-                    message: err.message
-                })
-            } else {
-                next(err)
-            }
-        })
+        const { phoneNumber, ktp, username } = req.body
+        User.update({ phoneNumber, ktp, username }, { where: { id: id } })
+            .then(data => {
+                if (data[0] === 0) {
+                    res.status(404).json({
+                        message: `User with id ${id} not found`
+                    })
+                } else {
+                    res.status(201).json({
+                        message: `User with id ${id} Updated`
+                    })
+                }
+            })
+            .catch(err => {
+                if (err.name === 'SequelizeValidationError') {
+                    res.status(400).json({
+                        message: err.message
+                    })
+                } else {
+                    next(err)
+                }
+            })
     }
-    static updateStatus (req, res, next){
-        const {planStatus} = req.body
+    static updateStatus(req, res, next) {
+        const { planStatus } = req.body
+    }
+    static async getSearchEctyId(req, res, next) {
+        try {
+            const search = await User.findOne({ where: { EctyId: +req.params.ectyId } })
+            return res.status(200).json({
+                message: `Success Search`, search
+            })
+        } catch (error) {
+            console.log(error)
+            next(error)
+        }
     }
 }

@@ -52,12 +52,12 @@ describe('POST /itinerary', function () {
             ratingPlace: "4",
             itineraryOrder : 1,
             datePlace : "2022-03-17",
-            transportationType: "Motor",
-            from: "Mataram",
-            to: "Bali",
-            distance: "10km",
-            estimatedTime: "1 hari",
-            estimatedPriceTrans: "40000"
+            // transportationType: "Motor",
+            // from: "Mataram",
+            // to: "Bali",
+            // distance: "10km",
+            // estimatedTime: "1 hari",
+            // estimatedPriceTrans: "40000"
         }
         request(app)
             .post("/itinerary")

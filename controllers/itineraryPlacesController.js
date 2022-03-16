@@ -18,9 +18,9 @@ class itineraryPlacesController {
     try {
       const {name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId, imagePlace} = req.body
       const itineraryPlace = await ItineraryPlace.update({name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId, imagePlace}, {where: {id: +req.params.id}, returning: true, plain:true})
-
+      console.log(itineraryPlace,'YOIIIIIIIIIIII');
       if(itineraryPlace[0] === 0 ){
-        next({status: 404, message: `Itinerary Place with id ${req.params.id} not found`})
+        return next({status: 404, message: `Itinerary Place with id ${req.params.id} not found`})
       }else{
         return res.status(201).json({itineraryPlace,message: `Itinerary Place with id ${req.params.id} Updated`})
       }

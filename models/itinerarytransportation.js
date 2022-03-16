@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
   ItineraryTransportation.init({
     transportationType: {
       type: DataTypes.STRING,
-      allowNull: false,
       validate: {
         notEmpty: {
           msg: "Transportation Type is Required"
@@ -26,7 +25,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     from: {
       type: DataTypes.STRING,
-      allowNull: false,
       validate: {
         notEmpty: {
           msg: "From is Required"
@@ -35,7 +33,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     to: {
       type: DataTypes.STRING,
-      allowNull: false,
       validate: {
         notEmpty: {
           msg: "To is Required"
@@ -47,7 +44,6 @@ module.exports = (sequelize, DataTypes) => {
     estimatedPrice: DataTypes.INTEGER,
     ItineraryId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       validate: {
         notEmpty: {
           msg: "Itinerary Id is Required"

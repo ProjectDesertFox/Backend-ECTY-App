@@ -148,17 +148,16 @@ describe('PATCH /itineraryPlaces/:id', function () {
                 done(err)
             })
     })
-    it('Update Itinerary Place id not found', function (done) {
+    it('Update itinerary Places id not found', function (done) {
         let input = {
-            name: "Tanah Lot",
+            name: "Tanah Lot 2",
         }
         request(app)
-            .put(`/itineraryPlaces/100`)
+            .patch(`/itineraryPlaces/100`)
             .send(input)
             .set('Accept', 'application/json')
             .set({ access_token: access_token })
             .then(response => {
-                // console.log(response.body,'check+++++++++');
                 console.log(response.body, 'update+++++++gagal');
                 const { body, status } = response
                 expect(status).toBe(404)
@@ -166,7 +165,7 @@ describe('PATCH /itineraryPlaces/:id', function () {
                 done()
             })
             .catch(err => {
-                // console.log(err,'err============');
+                console.log(err, 'err============');
                 done(err)
             })
     })
@@ -206,7 +205,7 @@ describe('DELETE /itineraryPlaces/:id', function () {
                 //expect(body.transportation.name === "Fortuner").toBe(true)
                 done();
             })
-        
+
             .catch((err) => {
                 //console.log(err);
                 done(err)

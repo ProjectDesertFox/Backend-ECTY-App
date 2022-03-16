@@ -101,7 +101,7 @@ module.exports = class verificationController {
         const t = await sequelize.transaction()
         try {
             let userId = req.params.userId
-            let updateUserVerif = await UserVerification.update({ validKTP: 'False' }, { where: { UserId: userId }, transaction: t })
+            let updateUserVerif = await UserVerification.update({ validKTP: 'false' }, { where: { UserId: userId }, transaction: t })
             let updateUserKTP = await User.update({ ktp: null }, { where: { id: userId }, transaction: t })
             let userData = await User.findOne({where:{id:userId}})
             await t.commit()

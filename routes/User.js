@@ -1,12 +1,12 @@
 const userController = require ('../controllers/userController')
-const { authentication } = require('../middlewares/auth')
 
 const router = require('express').Router()
 
 
 router.get('/', userController.getAllUser)
-router.patch('/', userController)
 router.get('/userCurrent', userController.getOneUser)
+router.get('/findEctyId/:ectyId', userController.getSearchEctyId)
+router.get('/:id', userController.fetchOneUser)
 router.patch('/:id', userController.updateUser)
 router.delete('/:id', userController.deleteUser)
 

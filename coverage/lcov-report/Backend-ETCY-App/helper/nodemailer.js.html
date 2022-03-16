@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.71% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/14</span>
+                <span class='fraction'>2/14</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.71% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/14</span>
+                <span class='fraction'>2/14</span>
             </div>
         
             
@@ -113,31 +113,12 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -163,17 +144,46 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span></td><td class="text"><pre class="prettyprint lang-js">const nodemailer = require('nodemailer')
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const nodemailer = require('nodemailer')
 &nbsp;
-function sendMail(email, subject, body){
-    var transporter = nodemailer.createTransport({
+function <span class="fstat-no" title="function not covered" >sendMail(</span>email, subject, body){
+    var transporter = <span class="cstat-no" title="statement not covered" >nodemailer.createTransport({</span>
         service: 'gmail',
         auth: {
             user: 'ectyapp@gmail.com',
             pass: 'desertfox' // naturally, replace both with your real credentials or an application-specific password
         }
     });
-    const mailOptions = {
+    const mailOptions = <span class="cstat-no" title="statement not covered" >{</span>
         from: 'ectyapp@gmail.com',
         to: `${email}`,
         subject: `${subject}`,
@@ -181,7 +191,7 @@ function sendMail(email, subject, body){
         //html: `Please press &lt;a href=http://localhost:3000/verify/${uniqueString}&gt; here &lt;/a&gt; to verify your email. Thanks`
     };
 &nbsp;
-    transporter.sendMail(mailOptions, <span class="fstat-no" title="function not covered" >fu</span>nction (error, info) {
+<span class="cstat-no" title="statement not covered" >    transporter.sendMail(mailOptions, <span class="fstat-no" title="function not covered" >fu</span>nction (error, info) {</span>
 <span class="cstat-no" title="statement not covered" >        if (error) {</span>
 <span class="cstat-no" title="statement not covered" >            console.log(error);</span>
         } else {
@@ -189,25 +199,30 @@ function sendMail(email, subject, body){
         }
     });
 }
-function <span class="fstat-no" title="function not covered" >receiveMail(</span>subject, body){
+function <span class="fstat-no" title="function not covered" >receiveMail(</span>subject, body, image){
     var transporter = <span class="cstat-no" title="statement not covered" >nodemailer.createTransport({</span>
         service: 'gmail',
         auth: {
-            user: 'desertfox.pet@gmail.com',
-            pass: 'desertFox08' // naturally, replace both with your real credentials or an application-specific password
+            user: 'ectyapp@gmail.com',
+            pass: 'desertfox' // naturally, replace both with your real credentials or an application-specific password
         }
     });
     const mailOptions = <span class="cstat-no" title="statement not covered" >{</span>
-        from: 'desertfox.pet@gmail.com',
+        from: 'Admin',
         to: `ectyapp@gmail.com`,
         subject: `${subject}`,
-        text: `${body}`,
-        //html: `Please press &lt;a href=http://localhost:3000/verify/${uniqueString}&gt; here &lt;/a&gt; to verify your email. Thanks`
+        html: ` Name : ${body.username},
+        Image: ${image},
+        User ID: ${body.id},
+        Email : ${body.email}
+        Please press &lt;a href=https://ecty-backend.herokuapp.com/verification/ktp-approve/${body.id}&gt; Approve &lt;/a&gt; to Approve verification KTP.
+&nbsp;
+        Please press &lt;a href=https://ecty-backend.herokuapp.com/verification/ktp-disapprove/${body.id}&gt; Disapprove &lt;/a&gt; to disapprove verification KTP`
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    transporter.receiveMail(mailOptions, <span class="fstat-no" title="function not covered" >fu</span>nction (error, info) {</span>
+<span class="cstat-no" title="statement not covered" >    transporter.sendMail(mailOptions, <span class="fstat-no" title="function not covered" >fu</span>nction (error, info) {</span>
 <span class="cstat-no" title="statement not covered" >        if (error) {</span>
-<span class="cstat-no" title="statement not covered" >            console.log(error);</span>
+<span class="cstat-no" title="statement not covered" >            console.log(error,'error receive mail +++++++++++++++');</span>
         } else {
 <span class="cstat-no" title="statement not covered" >            console.log('Email sent: ' + info.response);</span>
         }
@@ -220,7 +235,7 @@ module.exports = {sendMail, receiveMail}</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Mar 14 2022 14:54:19 GMT+0800 (Central Indonesia Time)
+                at Wed Mar 16 2022 15:16:09 GMT+0800 (Central Indonesia Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

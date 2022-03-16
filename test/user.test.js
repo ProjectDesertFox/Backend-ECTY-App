@@ -9,7 +9,7 @@ let idUser
 
 beforeAll((done)=>{
     console.log('kepanggil gk=============');
-    queryInterface.bulkDelete('UserVerifications', null, {})
+    queryInterface.bulkDelete('UserVerifications', {}, null)
     .then(()=>{
         return queryInterface.bulkDelete('Users', {}, null)
     })
@@ -205,6 +205,7 @@ describe('POST /register', function () {
             .send(input)
             .set('Accept', 'application/json')
             .then(response => {
+                console.log(response.body,'regis+++++++++++++');
                 const { body, status } = response
                 expect(status).toBe(400)
                 expect(body).toHaveProperty("success", false)
@@ -306,19 +307,17 @@ describe('GET /users/:id', function () {
                 console.log(res.body, 'user one +======');
                 const { status, body } = res;
                 expect(status).toBe(200);
-                //expect body. name ===
-                //expect(body.transportation.name === "Fortuner").toBe(true)
                 done();
             })
             .catch((err) => {
-                //console.log(err);
+                console.log(err,'one++++++++++++(((');
                 done(err)
             }
             );
     });
     it("wrong id params", function (done) {
         request(app)
-            .get("/users/4")
+            .get("/users/400")
             .set("Accept", "application/json")
             .set({ access_token: access_token })
             .then((res) => {
@@ -326,11 +325,30 @@ describe('GET /users/:id', function () {
                 console.log(res.body, 'id wrong ++++++++++++');
                 expect(status).toBe(404);
                 //respo kalau ada
-                expect(body).toHaveProperty("message", 'Data User with id 4 not found')
+                expect(body).toHaveProperty("message", 'Data User with id 400 not found')
                 done();
             })
             .catch((err) => {
-                console.log(err);
+                console.log(err,'yttt=============');
+                done(err)
+            }
+            );
+    });
+})
+describe('GET /users/userCurrent', function () {
+    it("Succes get one data user login", function (done) {
+        request(app)
+            .get(`/users/userCurrent`)
+            .set("Accept", "application/json")
+            .set({ access_token: access_token })
+            .then((res) => {
+                console.log(res.body, 'user one +======');
+                const { status, body } = res;
+                expect(status).toBe(200);
+                done();
+            })
+            .catch((err) => {
+                console.log(err,'one++++++++++++(((');
                 done(err)
             }
             );

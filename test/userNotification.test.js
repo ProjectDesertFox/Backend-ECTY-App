@@ -107,7 +107,7 @@ describe('PATCH /userNotification/:id', function () {
             status: "Not Active",
         }
         request(app)
-            .put(`/userNotification/100`)
+            .patch(`/userNotification/100`)
             .send(input)
             .set('Accept', 'application/json')
             .set({ access_token: access_token })
@@ -120,7 +120,7 @@ describe('PATCH /userNotification/:id', function () {
                 done()
             })
             .catch(err => {
-                // console.log(err,'err============');
+                console.log(err,'err============');
                 done(err)
             })
     })

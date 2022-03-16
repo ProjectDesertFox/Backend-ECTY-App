@@ -132,7 +132,7 @@ describe('PATCH /itineraryTransportation/:id', function () {
             title : "Bali Trip Abal2",
         }
         request(app)
-            .put(`/itineraryTransportation/1`)
+            .patch(`/itineraryTransportation/1`)
             .send(input)
             .set('Accept', 'application/json')
             .set({ access_token: access_token })

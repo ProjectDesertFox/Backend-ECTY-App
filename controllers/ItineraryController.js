@@ -45,15 +45,15 @@ class ControllerItinerary {
                 ItineraryId: Itineraries.dataValues.id 
             })
 
-            const transportation = await ItineraryTransportation.create({
-                transportationType: req.body.transportationType,
-                from: req.body.from,
-                to: req.body.to,
-                distance: req.body.distance,
-                estimatedTime: req.body.estimatedTime,
-                estimatedPrice: req.body.estimatedPriceTrans,
-                ItineraryId: Itineraries.dataValues.id
-            })
+            // const transportation = await ItineraryTransportation.create({
+            //     transportationType: req.body.transportationType,
+            //     from: req.body.from,
+            //     to: req.body.to,
+            //     distance: req.body.distance,
+            //     estimatedTime: req.body.estimatedTime,
+            //     estimatedPrice: req.body.estimatedPriceTrans,
+            //     ItineraryId: Itineraries.dataValues.id
+            // })
             // await transaction.commit()
             return res.status(201).json({message: 'Succes create Itinerary', Itineraries})
 
@@ -66,7 +66,7 @@ class ControllerItinerary {
         Itinerary.findAll({where:{type:'public'||'Public'}, include:[
             User,
             ItineraryPlace,
-            ItineraryTransportation,
+            //ItineraryTransportation,
             GroupChat
         ]})
         .then(itineraries=>{
@@ -93,7 +93,7 @@ class ControllerItinerary {
         let id = req.params.id
 
         Itinerary.findOne({
-            where: { id }, include:[ItineraryPlace,ItineraryTransportation]
+            where: { id }, include:[ItineraryPlace]
             })
             .then(data => {
                 res.status(200).json({

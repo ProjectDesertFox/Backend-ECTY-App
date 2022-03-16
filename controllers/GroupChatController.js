@@ -17,6 +17,7 @@ class ControllerGroupChat {
                     message:"Success to make Group Chat",
                     name: data.name,
                     status: data.status,
+                    id:data.id
                 })
             })
             .catch(err => {
@@ -33,8 +34,8 @@ class ControllerGroupChat {
             where: { id }
         })
             .then(data => {
-                res.status(201).json({
-                    items: data
+                res.status(200).json({
+                    data: data
                 })
             })
             .catch(err => {
@@ -49,11 +50,11 @@ class ControllerGroupChat {
             .then(data => {
                 if(data[0] === 0){
                     res.status(404).json({
-                        message: `Item with id ${id} not found`
+                        message: `Group Chat with id ${id} not found`
                     })
                 } else {
                     res.status(201).json({
-                        message : `Item with id ${id} Updated`
+                        message : `Group Chat with id ${id} Updated`
                     })
                 }
             })
@@ -71,11 +72,11 @@ class ControllerGroupChat {
         .then(data =>{
             if(data === 0){
                 res.status(404).json({
-                    message: `Item with id ${id} not found`
+                    message: `Group Chat with id ${id} not found`
                 })
             } else {
                 res.status(200).json({
-                    message: `Item with id ${id} Deleted`
+                    message: `Group Chat with id ${id} Deleted`
                 })
             }
         })

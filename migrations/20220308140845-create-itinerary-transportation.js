@@ -10,15 +10,12 @@ module.exports = {
       },
       transportationType: {
         type: Sequelize.STRING,
-        allowNull: false
       },
       from: {
         type: Sequelize.STRING,
-        allowNull: false
       },
       to: {
         type: Sequelize.STRING,
-        allowNull: false
       },
       // from: {
       //   type: Sequelize.STRING,
@@ -51,7 +48,6 @@ module.exports = {
       },
       ItineraryId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
         references: {
           model: 'Itineraries',
           key: 'id'

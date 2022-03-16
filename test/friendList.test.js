@@ -56,13 +56,40 @@ describe('POST /friendList/:ectyId', function () {
             .set({ access_token: access_token })
             .then(response => {
                 idFriendList = response.body.id
-                console.log(response.body,'add Friend++++++++');
+                console.log(response.body.id,'add Friend++++++++');
                 const { body, status } = response
                 expect(status).toBe(201)
                 expect(body).toHaveProperty("FriendId", "72911665")
                 done()
             })
-            .catch(err => done(err))
+            .catch(err => {
+                console.log(err,'friendList');
+                done(err)
+            })
+    })
+    it('Add Friend Fail', function (done) {
+        // let input = {
+        //     username: "fifit",
+        //     email: "fifit.mocap@gmail.com",
+        //     password: "12345",
+        // }
+        request(app)
+            .post("/friendList/72911665")
+            //.send(input)
+            .set('Accept', 'application/json')
+            .set({ access_token: access_token })
+            .then(response => {
+                //idFriendList = response.body.id
+                console.log(response.body,'add Friend++++++++');
+                const { body, status } = response
+                expect(status).toBe(400)
+                //expect(body).toHaveProperty("FriendId", "72911665")
+                done()
+            })
+            .catch(err => {
+                console.log(err,'friendList');
+                done(err)
+            })
     })
 
 })
@@ -89,6 +116,7 @@ describe('GET /friendList', function () {
 })
 describe('DELETE /friendList/:id', function () {
     it("Delete Friend List", function (done) {
+        console.log(idFriendList,'id+++++++++');
         request(app)
             .delete(`/friendList/${idFriendList}`)
             .set("Accept", "application/json")
@@ -103,7 +131,7 @@ describe('DELETE /friendList/:id', function () {
                 done();
             })
             .catch((err) => {
-                //console.log(err);
+                console.log(err,'delete');
                 done(err)
             }
             );
