@@ -4,12 +4,6 @@ var { Op } = require('sequelize');
 class friendListController {
   static async getFriendList(req, res, next) {
     console.log(typeof req.UserId, 'user--------id');
-    // let ectyId = req.query.EctyId
-    // let where = {}
-
-    // if(ectyId){
-    //     where.ectyId = {[Op.eq] : ectyId}
-    // }
     try {
       let friendList = await FriendList.findAll({ include: [{ model: User, as: 'User' }], where: { UserId: req.UserId } })
       res.status(200).json(friendList)
@@ -21,9 +15,9 @@ class friendListController {
   static async addFriend(req, res, next) {
     try {
       const UserId = req.UserId
-      const FriendId = req.params.ectyId
+      const FriendId = +req.params.friendId
       let checkFriend = await FriendList.findAll({ where: { UserId, FriendId } })
-      //console.log(checkFriend, 'checkFriend=================');
+      console.log(checkFriend, 'checkFriend=================');
       if (!checkFriend.length > 0) {
         //console.log(checkFriend, 'checkFriend=================if');
         let addFriend = await FriendList.create({ UserId, FriendId })

@@ -19,11 +19,11 @@ module.exports = {
         onDelete: 'cascade'
       },
       FriendId: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'Users',
-          key: 'EctyId'
+          key: 'id'
         },
         onUpdate: 'cascade',
         onDelete: 'cascade'

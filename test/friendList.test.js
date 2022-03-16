@@ -42,7 +42,7 @@ beforeAll((done)=>{
     .catch(err => done(err))
 })
 
-describe('POST /friendList/:ectyId', function () {
+describe('POST /friendList/:friendId', function () {
     it('Add Friend Success', function (done) {
         // let input = {
         //     username: "fifit",
@@ -50,7 +50,7 @@ describe('POST /friendList/:ectyId', function () {
         //     password: "12345",
         // }
         request(app)
-            .post("/friendList/72911665")
+            .post("/friendList/2")
             //.send(input)
             .set('Accept', 'application/json')
             .set({ access_token: access_token })
@@ -59,7 +59,31 @@ describe('POST /friendList/:ectyId', function () {
                 console.log(response.body.id,'add Friend++++++++');
                 const { body, status } = response
                 expect(status).toBe(201)
-                expect(body).toHaveProperty("FriendId", "72911665")
+                //expect(body).toHaveProperty("FriendId", "72911665")
+                done()
+            })
+            .catch(err => {
+                console.log(err,'friendList');
+                done(err)
+            })
+    })
+    it('Add Friend Double', function (done) {
+        // let input = {
+        //     username: "fifit",
+        //     email: "fifit.mocap@gmail.com",
+        //     password: "12345",
+        // }
+        request(app)
+            .post("/friendList/2")
+            //.send(input)
+            .set('Accept', 'application/json')
+            .set({ access_token: access_token })
+            .then(response => {
+                //idFriendList = response.body.id
+                console.log(response.body.id,'add Friend++++++++');
+                const { body, status } = response
+                expect(status).toBe(400)
+                //expect(body).toHaveProperty("FriendId", "72911665")
                 done()
             })
             .catch(err => {
@@ -68,13 +92,8 @@ describe('POST /friendList/:ectyId', function () {
             })
     })
     it('Add Friend Fail', function (done) {
-        // let input = {
-        //     username: "fifit",
-        //     email: "fifit.mocap@gmail.com",
-        //     password: "12345",
-        // }
         request(app)
-            .post("/friendList/72911665")
+            .post("/friendList/100")
             //.send(input)
             .set('Accept', 'application/json')
             .set({ access_token: access_token })
@@ -82,8 +101,8 @@ describe('POST /friendList/:ectyId', function () {
                 //idFriendList = response.body.id
                 console.log(response.body,'add Friend++++++++');
                 const { body, status } = response
-                expect(status).toBe(400)
-                //expect(body).toHaveProperty("FriendId", "72911665")
+                expect(status).toBe(404)
+                expect(body).toHaveProperty("message", "Friend Id is not found")
                 done()
             })
             .catch(err => {
@@ -138,14 +157,14 @@ describe('DELETE /friendList/:id', function () {
     });
     it("Delete User id not found", function (done) {
         request(app)
-            .delete("/friendList/2")
+            .delete("/friendList/200")
             .set("Accept", "application/json")
             .set({ access_token: access_token })
             .then((res) => {
                 console.log(res.body, 'user delete +======');
                 const { status, body } = res;
                 expect(status).toBe(404);
-                expect(body).toHaveProperty("message", "Friend with id 2 not found")
+                expect(body).toHaveProperty("message", "Friend with id 200 not found")
                 //expect body. name ===
                 //expect(body.transportation.name === "Fortuner").toBe(true)
                 done();
