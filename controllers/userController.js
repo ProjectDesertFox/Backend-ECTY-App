@@ -105,15 +105,14 @@ module.exports = class userController {
         const id = req.UserId
         User.findByPk(id, {
             include: [
-                UserVerification,
-                FriendList
+                UserVerification
             ]
         })
             .then(data => {
                 res.status(200).json(data)
             })
             .catch(err => {
-                console.log(err);
+                console.log(err,'getOne-------');
                 next(err)
             })
     } static fetchOneUser(req, res, next) {
@@ -167,12 +166,12 @@ module.exports = class userController {
     }
     static async getSearchEctyId(req, res, next) {
         try {
-            const search = await User.findOne({ where: { EctyId: +req.params.ectyId } })
+            const search = await User.findOne({ where: { EctyId: req.params.ectyId } })
             return res.status(200).json({
                 message: `Success Search`, search
             })
         } catch (error) {
-            console.log(error)
+            console.log(error,'error search++++++++')
             next(error)
         }
     }

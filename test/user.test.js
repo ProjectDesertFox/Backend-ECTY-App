@@ -6,6 +6,7 @@ const {queryInterface} = sequelize
 let uniqueNumber
 let access_token
 let idUser
+let ectyId
 
 beforeAll((done)=>{
     console.log('kepanggil gk=============');
@@ -91,6 +92,7 @@ describe('POST /register', function () {
             .send(input)
             .set('Accept', 'application/json')
             .then(response => {
+                ectyId = response.body.user.EctyId
                 const { body, status } = response
                 expect(status).toBe(201)
                 expect(body).toHaveProperty("message", "Register Success")
@@ -356,6 +358,25 @@ describe('GET /users/userCurrent', function () {
 })
 describe('PATCH /users/:id', function () {
 
+})
+describe('GET /users/findEctyId/:ectyId', function () {
+    it("Succes get one data search", function (done) {
+        request(app)
+            .get(`/users/findEctyId/${ectyId}`)
+            .set("Accept", "application/json")
+            .set({ access_token: access_token })
+            .then((res) => {
+                console.log(res.body, 'user one +======');
+                const { status, body } = res;
+                expect(status).toBe(200);
+                done();
+            })
+            .catch((err) => {
+                console.log(err,'one++++++++++++(((');
+                done(err)
+            }
+            );
+    });
 })
 describe('DELETE /users/:id', function () {
     it("Delete User", function (done) {
