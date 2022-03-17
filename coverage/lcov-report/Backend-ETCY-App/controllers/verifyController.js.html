@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">43.75% </span>
+                <span class="strong">4.68% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>28/64</span>
+                <span class='fraction'>3/64</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.85% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/14</span>
+                <span class='fraction'>0/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.93% </span>
+                <span class="strong">4.83% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>26/62</span>
+                <span class='fraction'>3/62</span>
             </div>
         
             
@@ -183,50 +183,50 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -297,52 +297,52 @@
 const { User, UserVerification, sequelize } = require('../models')
 &nbsp;
 module.exports = class verificationController {
-    static sendEmailVerification(req, res, next) {
-        const randomNumber = () =&gt; {
-            const len = 4
-            let randNum = ''
+<span class="fstat-no" title="function not covered" >    st</span>atic sendEmailVerification(req, res, next) {
+        const randomNumber = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+            const len = <span class="cstat-no" title="statement not covered" >4</span>
+            let randNum = <span class="cstat-no" title="statement not covered" >''</span>
 &nbsp;
-            for (let i = 0; i &lt; len; i++) {
-                console.log('loop');
-                const tempRandomNumber = Math.floor((Math.random() * 9) + 1)
-                randNum += tempRandomNumber
+<span class="cstat-no" title="statement not covered" >            for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; len; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                console.log('loop');</span>
+                const tempRandomNumber = <span class="cstat-no" title="statement not covered" >Math.floor((Math.random() * 9) + 1)</span>
+<span class="cstat-no" title="statement not covered" >                randNum += tempRandomNumber</span>
             }
-            return randNum
+<span class="cstat-no" title="statement not covered" >            return randNum</span>
         }
 &nbsp;
-        const { UserEmail } = req.body
-        let UniqueNumberVerificationEmail = randomNumber()
+        const { UserEmail } = <span class="cstat-no" title="statement not covered" >req.body</span>
+        let UniqueNumberVerificationEmail = <span class="cstat-no" title="statement not covered" >randomNumber()</span>
 &nbsp;
-        UserVerification.create({ UserEmail, UniqueNumberVerificationEmail })
-            .then(data =&gt; {
-                res.status(201).json({
+<span class="cstat-no" title="statement not covered" >        UserVerification.create({ UserEmail, UniqueNumberVerificationEmail })</span>
+            .then(<span class="fstat-no" title="function not covered" >da</span>ta =&gt; {
+<span class="cstat-no" title="statement not covered" >                res.status(201).json({</span>
                     success: true, message: `Success Sent Verification code to ${data.UserEmail}, kindly check your email!!`, data: data
                 })
-                sendMail(data.UserEmail, 'ECTY Email Verification', `Please insert this number ${data.UniqueNumberVerificationEmail} to continue process verification email to registration`)
+<span class="cstat-no" title="statement not covered" >                sendMail(data.UserEmail, 'ECTY Email Verification', `Please insert this number ${data.UniqueNumberVerificationEmail} to continue process verification email to registration`)</span>
             })
-            .catch(err =&gt; {
-                if (err.name === 'SequelizeUniqueConstraintError') {
-                    let contrainError = err.errors.map(element =&gt; element.message)
-                    next({ status: 400, message: contrainError })
-                } else <span class="missing-if-branch" title="else path not taken" >E</span>{
+            .catch(<span class="fstat-no" title="function not covered" >er</span>r =&gt; {
+<span class="cstat-no" title="statement not covered" >                if (err.name === 'SequelizeUniqueConstraintError') {</span>
+                    let contrainError = <span class="cstat-no" title="statement not covered" >err.errors.map(<span class="fstat-no" title="function not covered" >el</span>ement =&gt; <span class="cstat-no" title="statement not covered" >element.message)</span></span>
+<span class="cstat-no" title="statement not covered" >                    next({ status: 400, message: contrainError })</span>
+                } else {
 <span class="cstat-no" title="statement not covered" >                    next(err)</span>
                 }
             })
     }
-    static async checkEmailVerification(req, res, next) {
-        try {
-            let { UserEmail, UniqueNumberVerificationEmail } = req.body
-            let checkUser = await UserVerification.findAll({
+<span class="fstat-no" title="function not covered" >    st</span>atic async checkEmailVerification(req, res, next) {
+<span class="cstat-no" title="statement not covered" >        try {</span>
+            let { UserEmail, UniqueNumberVerificationEmail } = <span class="cstat-no" title="statement not covered" >req.body</span>
+            let checkUser = <span class="cstat-no" title="statement not covered" >await UserVerification.findAll({</span>
                 where: {
                     UserEmail: UserEmail,
                     UniqueNumberVerificationEmail: UniqueNumberVerificationEmail
                 }
             })
-            if (checkUser.length !== null) {
-                let validEmail = true
-                let updateUser = await UserVerification.update({ validEmail, statusValidEmail: '3' }, { where: { id: checkUser[0].dataValues.id } })
-                return res.status(201).json({ message: 'Email verification succes', status: updateUser.statusValidEmail })
-            } else <span class="missing-if-branch" title="else path not taken" >E</span>{
+<span class="cstat-no" title="statement not covered" >            if (checkUser.length !== null) {</span>
+                let validEmail = <span class="cstat-no" title="statement not covered" >true</span>
+                let updateUser = <span class="cstat-no" title="statement not covered" >await UserVerification.update({ validEmail, statusValidEmail: '3' }, { where: { id: checkUser[0].dataValues.id } })</span>
+<span class="cstat-no" title="statement not covered" >                return res.status(201).json({ message: 'Email verification succes', status: updateUser.statusValidEmail })</span>
+            } else {
 <span class="cstat-no" title="statement not covered" >                return res.status(400).json({ message: 'Fail to check Email' })</span>
             }
         } catch (error) {
@@ -415,7 +415,7 @@ module.exports = class verificationController {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Mar 17 2022 15:42:28 GMT+0800 (Central Indonesia Time)
+                at Thu Mar 17 2022 16:48:31 GMT+0800 (Central Indonesia Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>
