@@ -63,7 +63,7 @@ class ControllerItinerary {
                 //     ItineraryId: Itineraries.dataValues.id
                 // })
                 // await transaction.commit()
-                return res.status(201).json({ message: 'Succes create Itinerary', Itineraries })
+                return res.status(201).json({ message: 'Succes create Itinerary', Itineraries, chat })
             }
         } catch (error) {
             //console.log(error);
