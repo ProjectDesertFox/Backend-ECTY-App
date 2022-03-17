@@ -16,7 +16,7 @@ class itineraryTransportationController {
   static async updateItineraryTransportation (req, res, next) {
     try {
       const {transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId} = req.body
-      const itineraryTransportation = await ItineraryTransportation.update({transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId}, {where: {id: +req.params.id}, returning: true, plain:true})
+      const itineraryTransportation = await ItineraryTransportation.update({transportationType, from, to, distance, estimatedTime, estimatedPrice, ItineraryId}, {where: {id: +req.params.id}, returning: true})
       if(itineraryTransportation[0] === 0 ){
         return res.status(404).json({ message: `Itinerary Transportation with id ${req.params.id} not found`})
       }else{

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">5.4% </span>
+                <span class="strong">5.26% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/37</span>
+                <span class='fraction'>2/38</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">5.71% </span>
+                <span class="strong">5.55% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/35</span>
+                <span class='fraction'>2/36</span>
             </div>
         
             
@@ -129,7 +129,10 @@
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,6 +152,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -195,66 +201,69 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const {ItineraryPlace} = require('../models')
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const { ItineraryPlace } = require('../models')
 &nbsp;
 class itineraryPlacesController {
 &nbsp;
-<span class="fstat-no" title="function not covered" >  st</span>atic async getOne (req, res, next) {
+<span class="fstat-no" title="function not covered" >  st</span>atic async getOne(req, res, next) {
 <span class="cstat-no" title="statement not covered" >    try {</span>
-      const itineraryPlaces = <span class="cstat-no" title="statement not covered" >await ItineraryPlace.findOne({where: {id: +req.params.id}})</span>
+      const itineraryPlaces = <span class="cstat-no" title="statement not covered" >await ItineraryPlace.findOne({ where: { id: +req.params.id } })</span>
 <span class="cstat-no" title="statement not covered" >      if (itineraryPlaces === null) {</span>
 <span class="cstat-no" title="statement not covered" >        next({ status: 404, message: `Itinerary Place with id ${req.params.id} not found` })</span>
       } else {
-<span class="cstat-no" title="statement not covered" >          return res.status(200).json(itineraryPlaces)</span>
+<span class="cstat-no" title="statement not covered" >        return res.status(200).json(itineraryPlaces)</span>
       }
     } catch (err) {
 <span class="cstat-no" title="statement not covered" >      next(err)</span>
     }
   }
-<span class="fstat-no" title="function not covered" >  st</span>atic async updateItineraryPlace (req, res, next) {
+<span class="fstat-no" title="function not covered" >  st</span>atic async updateItineraryPlace(req, res, next) {
 <span class="cstat-no" title="statement not covered" >    try {</span>
-      const {name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId, imagePlace} = <span class="cstat-no" title="statement not covered" >req.body</span>
-      const itineraryPlace = <span class="cstat-no" title="statement not covered" >await ItineraryPlace.update({name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId, imagePlace}, {where: {id: +req.params.id}, returning: true, plain:true})</span>
-<span class="cstat-no" title="statement not covered" >      console.log(itineraryPlace,'YOIIIIIIIIIIII');</span>
-<span class="cstat-no" title="statement not covered" >      if(itineraryPlace[0] === 0 ){</span>
-<span class="cstat-no" title="statement not covered" >        return next({status: 404, message: `Itinerary Place with id ${req.params.id} not found`})</span>
-      }else{
-<span class="cstat-no" title="statement not covered" >        return res.status(201).json({itineraryPlace,message: `Itinerary Place with id ${req.params.id} Updated`})</span>
+      const { name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId, imagePlace } = <span class="cstat-no" title="statement not covered" >req.body</span>
+      const itineraryPlace = <span class="cstat-no" title="statement not covered" >await ItineraryPlace.update({ name, description, estimatedPrice, rating, itineraryOrder, date, itineraryId, imagePlace }, { where: { id: +req.params.id }, returning: true})</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      console.log(itineraryPlace, 'YOIIIIIIIIIIII');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (itineraryPlace[0] === 0) {</span>
+<span class="cstat-no" title="statement not covered" >        console.log('24.......');</span>
+<span class="cstat-no" title="statement not covered" >        return next({ status: 404, message: `Itinerary Place with id ${req.params.id} not found` })</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        return res.status(201).json({ itineraryPlace, message: `Itinerary Place with id ${req.params.id} Updated` })</span>
       }
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      if(err.name === 'SequelizeValidationError') {</span>
+<span class="cstat-no" title="statement not covered" >      if (err.name === 'SequelizeValidationError') {</span>
         let validation = <span class="cstat-no" title="statement not covered" >err.errors.map(<span class="fstat-no" title="function not covered" >el</span> =&gt; <span class="cstat-no" title="statement not covered" >el.message)</span></span>
 <span class="cstat-no" title="statement not covered" >        next({ status: 400, message: validation })</span>
-      }else{
+      } else {
 <span class="cstat-no" title="statement not covered" >        console.log(err)</span>
 <span class="cstat-no" title="statement not covered" >        next(err)</span>
       }
     }
   }
-<span class="fstat-no" title="function not covered" >  st</span>atic async deleteItineraryPlace(req, res, next){
+<span class="fstat-no" title="function not covered" >  st</span>atic async deleteItineraryPlace(req, res, next) {
 <span class="cstat-no" title="statement not covered" >    try {</span>
-      const itineraryPlace = <span class="cstat-no" title="statement not covered" >await ItineraryPlace.destroy({where: {id: req.params.id}})</span>
-<span class="cstat-no" title="statement not covered" >      if(itineraryPlace === 0){</span>
+      const itineraryPlace = <span class="cstat-no" title="statement not covered" >await ItineraryPlace.destroy({ where: { id: req.params.id } })</span>
+<span class="cstat-no" title="statement not covered" >      if (itineraryPlace === 0) {</span>
 <span class="cstat-no" title="statement not covered" >        next({ status: 404, message: `Itinerary Place with id ${req.params.id} not found` })</span>
-      }else{
-<span class="cstat-no" title="statement not covered" >        return res.status(200).json({message: `Itinerary Place with id ${req.params.id} deleted`})</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        return res.status(200).json({ message: `Itinerary Place with id ${req.params.id} deleted` })</span>
       }
     } catch (err) {
 <span class="cstat-no" title="statement not covered" >      next(err)</span>
-      
+&nbsp;
     }
   }
-<span class="fstat-no" title="function not covered" >  st</span>atic async addItineraryPlace (req, res, next) {
+<span class="fstat-no" title="function not covered" >  st</span>atic async addItineraryPlace(req, res, next) {
 <span class="cstat-no" title="statement not covered" >    try {</span>
-      const {name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId, imagePlace} = <span class="cstat-no" title="statement not covered" >req.body</span>
+      const { name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId, imagePlace } = <span class="cstat-no" title="statement not covered" >req.body</span>
       const status = <span class="cstat-no" title="statement not covered" >'Active'</span>
-      let itineraryPlace = <span class="cstat-no" title="statement not covered" >await ItineraryPlace.create({name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId, status, imagePlace})</span>
-<span class="cstat-no" title="statement not covered" >      res.status(201).json({message:'Success Add Itinerary Place', itineraryPlace})</span>
+      let itineraryPlace = <span class="cstat-no" title="statement not covered" >await ItineraryPlace.create({ name, description, estimatedPrice, rating, itineraryOrder, date, ItineraryId, status, imagePlace })</span>
+<span class="cstat-no" title="statement not covered" >      res.status(201).json({ message: 'Success Add Itinerary Place', itineraryPlace })</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      if(err.name === 'SequelizeValidationError') {</span>
+<span class="cstat-no" title="statement not covered" >      if (err.name === 'SequelizeValidationError') {</span>
         let validation = <span class="cstat-no" title="statement not covered" >err.errors.map(<span class="fstat-no" title="function not covered" >el</span> =&gt; <span class="cstat-no" title="statement not covered" >el.message)</span></span>
 <span class="cstat-no" title="statement not covered" >        next({ status: 400, message: validation })</span>
-      }else{
+      } else {
 <span class="cstat-no" title="statement not covered" >        next(err)</span>
       }
     }
@@ -268,7 +277,7 @@ module.exports = itineraryPlacesController</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Mar 17 2022 00:03:35 GMT+0800 (Central Indonesia Time)
+                at Thu Mar 17 2022 15:42:28 GMT+0800 (Central Indonesia Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -11,7 +11,7 @@ class userNotificationController {
   static async updateStatus (req, res, next) {
     try {
       let {status} = req.body
-      const userNotification = await UserNotification.update({status}, {where: {id: +req.params.id}, returning: true, plain:true})
+      const userNotification = await UserNotification.update({status}, {where: {id: +req.params.id}, returning: true})
       if(userNotification[0] === 0 ){
         next({status: 404, message: `Notification with id ${req.params.id} not found`})
       }else{

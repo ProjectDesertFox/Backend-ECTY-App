@@ -35,7 +35,7 @@ module.exports = class userController {
                 let validate = decrypt(password, data.password)
                 if (data && validate) {
                     const access_token = jwt.sign({ id: data.id, username: data.username }, process.env.JWT_SECRET)
-                    res.status(200).json({ success: true, message: "login berhasil", access_token });
+                    res.status(200).json({ success: true, message: "login berhasil", access_token, id: data.id});
                 } else {
                     next({ status: 401, message: "Invalid email/password!" })
                 }
@@ -138,8 +138,8 @@ module.exports = class userController {
     }
     static updateUser(req, res, next) {
         const id = req.params.id
-        const { phoneNumber, ktp, username } = req.body
-        User.update({ phoneNumber, ktp, username }, { where: { id: id } })
+        const { planStatus } = req.body
+        User.update({ planStatus }, { where: { id: id } })
             .then(data => {
                 if (data[0] === 0) {
                     res.status(404).json({
@@ -161,9 +161,9 @@ module.exports = class userController {
                 }
             })
     }
-    static updateStatus(req, res, next) {
-        const { planStatus } = req.body
-    }
+    // static updateStatus(req, res, next) {
+    //     const { planStatus } = req.body
+    // }
     static async getSearchEctyId(req, res, next) {
         try {
             const search = await User.findOne({ where: { EctyId: req.params.ectyId } })

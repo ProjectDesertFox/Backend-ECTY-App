@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">9.09% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/33</span>
+                <span class='fraction'>3/33</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">9.09% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/33</span>
+                <span class='fraction'>3/33</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -127,37 +127,37 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,39 +185,39 @@
 var { Op } = require('sequelize');
 &nbsp;
 class friendListController {
-  static async getFriendList(req, res, next) {
-    console.log(typeof req.UserId, 'user--------id');
-    try {
-      let friendList = await FriendList.findAll({ include: [{ model: User, as: 'Friend' }], where: { UserId: req.UserId } })
-      res.status(200).json(friendList)
+<span class="fstat-no" title="function not covered" >  st</span>atic async getFriendList(req, res, next) {
+<span class="cstat-no" title="statement not covered" >    console.log(typeof req.UserId, 'user--------id');</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      let friendList = <span class="cstat-no" title="statement not covered" >await FriendList.findAll({ include: [{ model: User, as: 'Friend' }], where: { UserId: req.UserId } })</span>
+<span class="cstat-no" title="statement not covered" >      res.status(200).json(friendList)</span>
     } catch (err) {
 <span class="cstat-no" title="statement not covered" >      console.log(err);</span>
 <span class="cstat-no" title="statement not covered" >      next(err)</span>
     }
   }
-  static async addFriend(req, res, next) {
-    const t = await sequelize.transaction()
-    try {
-      const UserId = req.UserId
-      const FriendId = +req.params.friendId
-      let checkFriend = await FriendList.findAll({ where: { UserId, FriendId } })
-      console.log(checkFriend, 'checkFriend=================');
-      if (!checkFriend.length &gt; 0) {
+<span class="fstat-no" title="function not covered" >  st</span>atic async addFriend(req, res, next) {
+    const t = <span class="cstat-no" title="statement not covered" >await sequelize.transaction()</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const UserId = <span class="cstat-no" title="statement not covered" >req.UserId</span>
+      const FriendId = <span class="cstat-no" title="statement not covered" >+req.params.friendId</span>
+      let checkFriend = <span class="cstat-no" title="statement not covered" >await FriendList.findAll({ where: { UserId, FriendId } })</span>
+<span class="cstat-no" title="statement not covered" >      console.log(checkFriend, 'checkFriend=================');</span>
+<span class="cstat-no" title="statement not covered" >      if (!checkFriend.length &gt; 0) {</span>
         //console.log(checkFriend, 'checkFriend=================if');
-        let addFriend = await FriendList.create({ UserId, FriendId },{transaction:t})
-        let addBack = await FriendList.create({UserId:addFriend.FriendId, FriendId:addFriend.UserId},{transaction:t})
-        await t.commit()
-        return res.status(201).json({addFriend, addBack})
+        let addFriend = <span class="cstat-no" title="statement not covered" >await FriendList.create({ UserId, FriendId },{transaction:t})</span>
+        let addBack = <span class="cstat-no" title="statement not covered" >await FriendList.create({UserId:addFriend.FriendId, FriendId:addFriend.UserId},{transaction:t})</span>
+<span class="cstat-no" title="statement not covered" >        await t.commit()</span>
+<span class="cstat-no" title="statement not covered" >        return res.status(201).json({addFriend, addBack})</span>
       } else {
         //console.log(checkFriend, 'checkFriend=================else');
-        await t.rollback()
-        return res.status(400).json('User has been added to friend list before')
+<span class="cstat-no" title="statement not covered" >        await t.rollback()</span>
+<span class="cstat-no" title="statement not covered" >        return res.status(400).json('User has been added to friend list before')</span>
       }
     } catch (err) {
-      if (err.name === 'SequelizeForeignKeyConstraintError') {
+<span class="cstat-no" title="statement not covered" >      if (err.name === 'SequelizeForeignKeyConstraintError') {</span>
         //let validation = err.errors.map(el =&gt; el.message)
-        next({ status: 404, message: 'Friend Id is not found' })
-      } else <span class="missing-if-branch" title="else path not taken" >E</span>{
+<span class="cstat-no" title="statement not covered" >        next({ status: 404, message: 'Friend Id is not found' })</span>
+      } else {
 <span class="cstat-no" title="statement not covered" >        next(err)</span>
       }
     }
@@ -247,7 +247,7 @@ module.exports = friendListController</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Mar 17 2022 00:03:35 GMT+0800 (Central Indonesia Time)
+                at Thu Mar 17 2022 15:42:28 GMT+0800 (Central Indonesia Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

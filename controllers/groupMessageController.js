@@ -2,11 +2,12 @@ const {GroupMessage, User, GroupMember} = require('../models')
 class groupMessageController {
   static async sendMessage (req, res, next){
     try {
-      let groupMemberId = req.params.groupMemberId
+      let GroupMemberId = req.params.groupMemberId
       let message = req.body.message
-      let groupMessage = await GroupMessage.create({groupMemberId, message})
+      let groupMessage = await GroupMessage.create({GroupMemberId, message})
       res.status(201).json(groupMessage)
     } catch (err) {
+      console.log(err,'cntrl++++++++++++=');
       if(err.name === 'SequelizeValidationError') {
         let validation = err.errors.map(el => el.message)
         next({ status: 400, message: validation })

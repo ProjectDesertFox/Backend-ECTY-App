@@ -93,6 +93,7 @@ describe('POST /register', function () {
             .set('Accept', 'application/json')
             .then(response => {
                 ectyId = response.body.user.EctyId
+                idUser = response.body.user.id
                 const { body, status } = response
                 expect(status).toBe(201)
                 expect(body).toHaveProperty("message", "Register Success")
@@ -285,7 +286,7 @@ describe('GET /users', function () {
             .set("Accept", "application/json")
             .set({ access_token: access_token })
             .then((res) => {
-                idUser = res.body[0].id
+                // idUser = res.body[0].id
                 const { status, body } = res;
                 console.log(res.body, 'user===========');
                 expect(status).toBe(200); 
@@ -357,7 +358,28 @@ describe('GET /users/userCurrent', function () {
     });
 })
 describe('PATCH /users/:id', function () {
-
+    it("Succes update user", function (done) {
+        let input = {
+            planStatus: 'Premium'
+        }
+        request(app)
+            .patch(`/users/${idUser}`)
+            .send(input)
+            .set("Accept", "application/json")
+            .set({ access_token: access_token })
+            .then((res) => {
+                console.log(res.body, 'user one +======');
+                const { status, body } = res;
+                expect(status).toBe(201);
+                expect(body).toHaveProperty("message", `User with id ${idUser} Updated`)
+                done();
+            })
+            .catch((err) => {
+                console.log(err,'one++++++++++++(((');
+                done(err)
+            }
+            );
+    });
 })
 describe('GET /users/findEctyId/:ectyId', function () {
     it("Succes get one data search", function (done) {

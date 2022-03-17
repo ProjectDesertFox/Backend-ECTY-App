@@ -14,6 +14,7 @@ module.exports = {
             .then(data =>{
                 if(data){
                     req.UserId = data.id
+                    console.log('auth aman');
                     next()
                 }else{
                     res.status(400).json({

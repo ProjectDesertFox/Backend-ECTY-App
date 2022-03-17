@@ -48,6 +48,7 @@ beforeAll((done) => {
         })
         .then(() => {
             return queryInterface.bulkInsert("GroupChats", [{
+                id:1,
                 name: "Bali Trip 16",
                 status: 'Active',
                 ItineraryId: 1,
@@ -59,6 +60,18 @@ beforeAll((done) => {
             return queryInterface.bulkDelete("GroupMembers", {}, null)
         })
         .then(() => {
+            return queryInterface.bulkDelete("GroupMembers", [{
+                id:1,
+                GroupChatId : 1,
+                UserId: 1,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            }])
+        })
+        .then(() => {
+            return queryInterface.bulkDelete("GroupMessages", {}, null)
+        })
+        .then(() => {
             access_token = jwt.sign({ id: 1, email: 'fifit.mocap@gmail.com' }, 'Rahasia')
             done()
         })
@@ -66,4 +79,33 @@ beforeAll((done) => {
             console.log(err, 'BeforeAlll+++++++++++++');
             done(err)
         })
+})
+
+describe('POST /groupMessage/:groupMemberId', function () {
+    it('Create Group message Success', function (done) {
+        let input = {
+            message: "hai"
+        }
+        request(app)
+            .post("/groupMessage/1")
+            .send(input)
+            .set('Accept', 'application/json')
+            .set({ access_token: access_token })
+            .then(response => {
+                //idGroupMember = response.body.groupMember.id
+                console.log(response.body,'======================');
+                const { body, status } = response
+                expect(status).toBe(201)
+                //expect(body).toHaveProperty("message", "Success to make Group Member")
+                done()
+            })
+            .catch(err => {
+                console.log(err,'err============');
+                done(err)
+            })
+    })
+})
+
+describe('GET /groupMessage/:groupMemberId', function () {
+
 })
