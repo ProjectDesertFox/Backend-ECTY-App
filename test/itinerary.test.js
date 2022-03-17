@@ -98,6 +98,26 @@ describe('GET /itinerary/:id', function () {
             );
     });
 })
+describe('GET /itinerary/list', function () {
+    it("Success get one data itinerary list", function (done) {
+        request(app)
+            .get(`/itinerary/list`)
+            .set("Accept", "application/json")
+            .set({ access_token: access_token })
+            .then((res) => {
+                //console.log(res.body, 'user one +======');
+                const { status, body } = res;
+                expect(status).toBe(200);
+                //expect(body).toHaveProperty("message", `Item with id ${idItinerary} Updated`)
+                done();
+            })
+            .catch((err) => {
+                //console.log(err);
+                done(err)
+            }
+            );
+    });
+})
 describe('PUT /itinerary/:id', function () {
     it('Update Itinerary', function (done) {
         let input = {

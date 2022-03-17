@@ -15,7 +15,7 @@ class ControllerItinerary {
             if (checkStatusUser.planStatus === 'Basic' && checkItinerary.length > 5) {
                 return res.status(400).json({ message: "you need to upgrade your plan status to Premium to create itinerary more than 5" })
             } else {
-                console.log(req.body)
+                //console.log(req.body)
                 const dataItinerary = {
                     title: req.body.title,
                     destination: req.body.destination,
@@ -66,7 +66,7 @@ class ControllerItinerary {
                 return res.status(201).json({ message: 'Succes create Itinerary', Itineraries })
             }
         } catch (error) {
-            console.log(error);
+            //console.log(error);
             next(error)
         }
     }
@@ -84,17 +84,17 @@ class ControllerItinerary {
                 res.status(200).json(itineraries)
             })
             .catch(err => {
-                console.log(err)
+                //console.log(err)
                 next(err)
             })
     }
     static fetchAllItineraryMyList(req, res, next) {
-        Itinerary.findAll({ where: { UserId: req.UserId } })
+        Itinerary.findAll({ where: { UserId: req.UserId }})
             .then(itineraries => {
                 res.status(200).json(itineraries)
             })
             .catch(err => {
-                console.log(err);
+                console.log(err,')))))))))))))))');
                 next(err)
             })
     }
